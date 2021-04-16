@@ -1,5 +1,5 @@
-# typescript-library-template
+# ndarray-pixels
 
-Personal template for new TypeScript libraries.
+Convert ndarray ↔ image data, for Web and Node.js.
 
-Somewhat opinionated choices, based on https://gist.github.com/donmccurdy/81b9bf0ab37a37ed6a676455b14efa71.
+Closely based on [get-pixels](https://www.npmjs.com/package/get-pixels) and [save-pixels](https://www.npmjs.com/package/save-pixels), with added support for use on the web without depending on polyfills for Node.js builtins. In Node.js, the `save-pixels` and `get-pixels` packages are used directly.

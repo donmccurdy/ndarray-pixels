@@ -1,11 +1,11 @@
 {
-  "name": "my-package",
+  "name": "ndarray-pixels",
   "version": "0.0.0",
-  "description": "my-package",
-  "main": "dist/my-package.js",
-  "module": "dist/my-package.modern.js",
+  "description": "ndarray-pixels",
+  "main": "dist/ndarray-pixels.js",
+  "module": "dist/ndarray-pixels.modern.js",
   "types": "dist/index.d.ts",
-  "repository": "github:donmccurdy/my-package",
+  "repository": "github:donmccurdy/ndarray-pixels",
   "author": "Don McCurdy <dm@donmccurdy.com>",
   "license": "MIT",
   "scripts": {
@@ -38,5 +38,11 @@
     "README.md",
     "LICENSE",
     "package.json"
-  ]
+  ],
+  "dependencies": {
+    "@types/ndarray": "^1.0.8",
+    "get-pixels": "^3.3.2",
+    "ndarray": "^1.0.19",
+    "save-pixels": "^2.3.4"
+  }
 }
