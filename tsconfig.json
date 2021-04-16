@@ -1,12 +1,13 @@
 {
 	"compilerOptions": {
 		"moduleResolution": "node",
-		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
 		"lib": ["es6", "dom"],
 		"target": "es6",
 		"declaration": true,
 		"types": ["node"],
 		"typeRoots": ["node_modules/@types"],
-		"strict": true,
+		"strict": true
 	},
+	"include": ["src/*"]
 }

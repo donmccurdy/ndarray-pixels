@@ -6,7 +6,6 @@ export function getPixels(path: string, callback: GetPixelsCallback): void;
 export function getPixels(path: string | Uint8Array, type: string, callback: GetPixelsCallback): void
 export function getPixels(path: string | Uint8Array, typeOrCallback: string | GetPixelsCallback, callback?: GetPixelsCallback): void {
 
-	// Callback.
 	callback = callback || typeOrCallback as GetPixelsCallback;
 
 	// Construct a Blob URL for Uint8Array inputs.

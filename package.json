@@ -2,22 +2,38 @@
   "name": "ndarray-pixels",
   "version": "0.0.0",
   "description": "ndarray-pixels",
-  "main": "dist/ndarray-pixels.js",
-  "module": "dist/ndarray-pixels.modern.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/ndarray-pixels.js",
+  "module": "./dist/ndarray-pixels.modern.js",
+  "types": "./dist/node.d.ts",
+	"exports": {
+		".": {
+			"browser": "./dist/ndarray-pixels.modern.js",
+			"require": "./dist/ndarray-pixels.js"
+		}
+  },
   "repository": "github:donmccurdy/ndarray-pixels",
   "author": "Don McCurdy <dm@donmccurdy.com>",
   "license": "MIT",
   "scripts": {
-    "dist": "microbundle --format modern,cjs --define PACKAGE_VERSION=$npm_package_version",
-    "watch": "microbundle watch --format modern,cjs --define PACKAGE_VERSION=$npm_package_version",
-    "watch:debug": "microbundle watch --no-compress --format modern,cjs --define PACKAGE_VERSION=$npm_package_version",
+    "dist": "yarn dist:node && yarn dist:browser",
+    "dist:node": "microbundle build --raw --target node -f cjs src/node.ts -o dist/ndarray-pixels.js",
+    "dist:browser": "microbundle build --raw --target web -f modern src/browser.ts -o dist/ndarray-pixels.js",
     "test": "ts-node node_modules/tape/bin/tape test/*.ts | tap-spec",
     "coverage": "nyc --reporter=lcov --reporter=text ts-node node_modules/tape/bin/tape test/*.ts",
     "coverage:report": "nyc report --reporter=text-lcov | coveralls",
     "preversion": "yarn dist && yarn test",
     "version": "yarn dist && git add -u",
     "postversion": "git push && git push --tags && npm publish && yarn coverage:report"
+  },
+  "dependencies": {
+    "@types/ndarray": "^1.0.8",
+    "@types/ndarray-ops": "^1.2.0",
+    "@types/node": "^14.14.41",
+    "get-pixels": "^3.3.2",
+    "ndarray": "^1.0.19",
+    "ndarray-ops": "^1.2.2",
+    "save-pixels": "^2.3.4",
+    "stream-browserify": "^3.0.0"
   },
   "devDependencies": {
     "@types/tape": "^4.13.0",
@@ -39,15 +55,5 @@
     "README.md",
     "LICENSE",
     "package.json"
-  ],
-  "dependencies": {
-    "@types/ndarray": "^1.0.8",
-    "@types/ndarray-ops": "^1.2.0",
-    "@types/node": "^14.14.41",
-    "get-pixels": "^3.3.2",
-    "ndarray": "^1.0.19",
-    "ndarray-ops": "^1.2.2",
-    "save-pixels": "^2.3.4",
-    "stream-browserify": "^3.0.0"
-  }
+  ]
 }
