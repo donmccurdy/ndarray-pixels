@@ -1,0 +1,42 @@
+{
+  "name": "my-package",
+  "version": "0.0.0",
+  "description": "my-package",
+  "main": "dist/my-package.js",
+  "module": "dist/my-package.modern.js",
+  "types": "dist/index.d.ts",
+  "repository": "github:donmccurdy/my-package",
+  "author": "Don McCurdy <dm@donmccurdy.com>",
+  "license": "MIT",
+  "scripts": {
+    "dist": "microbundle --format modern,cjs --define PACKAGE_VERSION=$npm_package_version",
+    "watch": "microbundle watch --format modern,cjs --define PACKAGE_VERSION=$npm_package_version",
+    "watch:debug": "microbundle watch --no-compress --format modern,cjs --define PACKAGE_VERSION=$npm_package_version",
+    "test": "ts-node node_modules/tape/bin/tape test/*.ts | tap-spec",
+    "coverage": "nyc --reporter=lcov --reporter=text ts-node node_modules/tape/bin/tape test/*.ts",
+    "coverage:report": "nyc report --reporter=text-lcov | coveralls",
+    "preversion": "yarn dist && yarn test",
+    "version": "yarn dist && git add -u",
+    "postversion": "git push && git push --tags && npm publish && yarn coverage:report"
+  },
+  "devDependencies": {
+    "@types/tape": "^4.13.0",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "coveralls": "^3.1.0",
+    "eslint": "^7.24.0",
+    "microbundle": "^0.13.0",
+    "nyc": "^15.1.0",
+    "source-map-support": "^0.5.19",
+    "tap-spec": "^5.0.0",
+    "tape": "^5.2.2",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  },
+  "files": [
+    "dist/",
+    "src/",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ]
+}
