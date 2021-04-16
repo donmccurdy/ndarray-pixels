@@ -2,20 +2,9 @@ import ndarray from 'ndarray';
 
 export type GetPixelsCallback = (err: string | Event | null, pixels?: ndarray) => void;
 
-const MimeType = {
-	png: 'image/png',
-	jpg: 'image/jpeg',
-	jpeg: 'image/jpeg',
-	webp: 'image/webp'
-};
-
 export function getPixels(path: string, callback: GetPixelsCallback): void;
-export function getPixels(path: Uint8Array, type: 'png' | 'jpeg' | 'jpg' | 'webp', callback: GetPixelsCallback): void;
-export function getPixels(
-		path: string | Uint8Array,
-		typeOrCallback: 'png' | 'jpeg' | 'jpg' | 'webp' | GetPixelsCallback,
-		callback?: GetPixelsCallback
-): void {
+export function getPixels(path: string | Uint8Array, type: string, callback: GetPixelsCallback): void
+export function getPixels(path: string | Uint8Array, typeOrCallback: string | GetPixelsCallback, callback?: GetPixelsCallback): void {
 
 	// Callback.
 	callback = callback || typeOrCallback as GetPixelsCallback;
@@ -25,10 +14,7 @@ export function getPixels(
 		if (typeof typeOrCallback !== 'string') {
 			throw new Error('[ndarray-pixels] Type must be given for Uint8Array image data');
 		}
-		const mimeType = typeOrCallback in MimeType
-			? MimeType[typeOrCallback]
-			: `image/${typeOrCallback}`;
-		const blob = new Blob([path], {type: mimeType});
+		const blob = new Blob([path], {type: typeOrCallback});
 		path = URL.createObjectURL(blob);
 	}
 
@@ -36,6 +22,8 @@ export function getPixels(
 	const img = new Image();
 	img.crossOrigin = 'anonymous';
 	img.onload = function() {
+		URL.revokeObjectURL(path as string);
+
 		const canvas = document.createElement('canvas');
 		canvas.width = img.width;
 		canvas.height = img.height;
@@ -44,6 +32,9 @@ export function getPixels(
 		const pixels = context.getImageData(0, 0, img.width, img.height)
 		callback!(null, ndarray(new Uint8Array(pixels.data), [img.width, img.height, 4], [4, 4*img.width, 1], 0));
 	}
-	img.onerror = (err) => callback!(err);
+	img.onerror = (err) => {
+		URL.revokeObjectURL(path as string);
+		callback!(err);
+	};
 	img.src = path;
 }

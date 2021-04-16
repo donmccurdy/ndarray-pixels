@@ -5,6 +5,7 @@
 		"lib": ["es6", "dom"],
 		"target": "es6",
 		"declaration": true,
+		"types": ["node"],
 		"typeRoots": ["node_modules/@types"],
 		"strict": true,
 	},

@@ -1,15 +1,14 @@
 import ndarray from 'ndarray';
 import ops from 'ndarray-ops';
-import through from 'through';
+import { Readable } from 'stream-browserify';
 
 export interface SavePixelsOptions {quality?: number};
 
 export function savePixels(array: ndarray, type: 'canvas'): HTMLCanvasElement;
-export function savePixels(array: ndarray, type: 'png'): through.ThroughStream;
-export function savePixels(array: ndarray, type: 'jpeg' | 'jpg', options?: SavePixelsOptions): through.ThroughStream;
-export function savePixels(array: ndarray, type: 'canvas' | 'png' | 'jpeg' | 'jpg', options: SavePixelsOptions = {}): through.ThroughStream | HTMLCanvasElement {
+export function savePixels(array: ndarray, type: 'png'): Readable;
+export function savePixels(array: ndarray, type: 'jpeg' | 'jpg', options?: SavePixelsOptions): Readable;
+export function savePixels(array: ndarray, type: 'canvas' | 'png' | 'jpeg' | 'jpg', options: SavePixelsOptions = {}): Readable | HTMLCanvasElement {
 	// Create HTMLCanvasElement and write pixel data.
-
 	const canvas = document.createElement('canvas');
 	canvas.width = array.shape[0];
 	canvas.height = array.shape[1];
@@ -20,47 +19,40 @@ export function savePixels(array: ndarray, type: 'canvas' | 'png' | 'jpeg' | 'jp
 	try {
 		handleData(array, imageData.data);
 	} catch (e) {
-		return handleError(e);
+		// Pass errors to stream, to match 'save-pixels' behavior.
+		return Readable.from((async function* () { throw e; })());
 	}
 
 	context.putImageData(imageData, 0, 0);
 
 	// Encode to target format.
-
-	let stream: through.ThroughStream;
-
 	switch (type) {
 		case 'canvas':
 			return canvas;
-
 		case 'jpg':
 		case 'jpeg':
-			stream = through();
-			canvas.toBlob(async (blob) => {
-				if (blob) {
-					stream.emit('data', new Uint8Array(await blob.arrayBuffer()));
-				} else {
-					stream.emit('error', new Error('[ndarray-pixels] Failed to canvas.toBlob().'));
-				}
-			}, 'image/jpeg', options.quality ? options.quality / 100 : undefined);
-			return stream;
-
+			return streamCanvas(canvas, 'image/jpeg', options.quality ? options.quality / 100 : undefined);
 		case 'png':
-			stream = through();
-			canvas.toBlob(async (blob) => {
-				if (blob) {
-					stream.emit('data', new Uint8Array(await blob.arrayBuffer()));
-				} else {
-					stream.emit('error', new Error('[ndarray-pixels] Failed to canvas.toBlob().'));
-				}
-			}, 'image/jpeg', options.quality ? options.quality / 100 : undefined);
-			return stream;
-
+			return streamCanvas(canvas, 'image/png');
 		default:
-			return handleError(new Error('[ndarray-pixels] Unsupported file type: ' + type));
+			throw new Error('[ndarray-pixels] Unsupported file type: ' + type);
 	}
 }
 
+/** Creates readable stream from given HTMLCanvasElement and options. */
+function streamCanvas(canvas: HTMLCanvasElement, mimeType: string, quality?: number): Readable {
+	return Readable.from((async function* () {
+		yield await new Promise(async (resolve, reject) => {
+			canvas.toBlob(async (blob) => {
+				if (blob) {
+					resolve(new Uint8Array(await blob.arrayBuffer()));
+				} else {
+					reject(new Error('[ndarray-pixels] Failed to canvas.toBlob().'));
+				}
+			}, mimeType, quality);
+		});
+	})());
+}
 
 function handleData(array: ndarray, data: Uint8Array | Uint8ClampedArray, frame = -1): Uint8Array | Uint8ClampedArray {
 	if (array.shape.length === 4) {
@@ -140,10 +132,4 @@ function handleData(array: ndarray, data: Uint8Array | Uint8ClampedArray, frame 
 		throw new Error('[ndarray-pixels] Incompatible array shape.');
 	}
 	return data;
-}
-
-function handleError(error: Error) {
-	const result = through();
-	result.emit('error', error);
-	return result;
 }
