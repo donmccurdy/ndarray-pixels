@@ -41,8 +41,12 @@
   ],
   "dependencies": {
     "@types/ndarray": "^1.0.8",
+    "@types/ndarray-ops": "^1.2.0",
+    "@types/through": "^0.0.30",
     "get-pixels": "^3.3.2",
     "ndarray": "^1.0.19",
-    "save-pixels": "^2.3.4"
+    "ndarray-ops": "^1.2.2",
+    "save-pixels": "^2.3.4",
+    "through": "^2.3.8"
   }
 }
