@@ -1,6 +1,5 @@
 import ndarray from 'ndarray';
 import ops from 'ndarray-ops';
-import { Readable } from 'stream-browserify';
 
 export interface SavePixelsOptions {quality?: number};
 
@@ -20,7 +19,7 @@ export function savePixels(array: ndarray, type: 'canvas' | 'png' | 'jpeg' | 'jp
 		handleData(array, imageData.data);
 	} catch (e) {
 		// Pass errors to stream, to match 'save-pixels' behavior.
-		return Readable.from((async function* () { throw e; })());
+		return Readable.from(Promise.reject(e));
 	}
 
 	context.putImageData(imageData, 0, 0);
@@ -41,17 +40,16 @@ export function savePixels(array: ndarray, type: 'canvas' | 'png' | 'jpeg' | 'jp
 
 /** Creates readable stream from given HTMLCanvasElement and options. */
 function streamCanvas(canvas: HTMLCanvasElement, mimeType: string, quality?: number): Readable {
-	return Readable.from((async function* () {
-		yield await new Promise(async (resolve, reject) => {
-			canvas.toBlob(async (blob) => {
-				if (blob) {
-					resolve(new Uint8Array(await blob.arrayBuffer()));
-				} else {
-					reject(new Error('[ndarray-pixels] Failed to canvas.toBlob().'));
-				}
-			}, mimeType, quality);
-		});
-	})());
+	const promise = new Promise<Uint8Array>(async (resolve, reject) => {
+		canvas.toBlob(async (blob) => {
+			if (blob) {
+				resolve(new Uint8Array(await blob.arrayBuffer()));
+			} else {
+				reject(new Error('[ndarray-pixels] Failed to canvas.toBlob().'));
+			}
+		}, mimeType, quality);
+	});
+	return Readable.from(promise);
 }
 
 function handleData(array: ndarray, data: Uint8Array | Uint8ClampedArray, frame = -1): Uint8Array | Uint8ClampedArray {
@@ -132,4 +130,23 @@ function handleData(array: ndarray, data: Uint8Array | Uint8ClampedArray, frame 
 		throw new Error('[ndarray-pixels] Incompatible array shape.');
 	}
 	return data;
+}
+
+class Readable {
+	constructor (private _promise: Promise<Uint8Array>) {}
+
+	on(event: 'data' | 'error' | 'end', fn: (res?: Uint8Array | Error) => void): this {
+		if (event === 'data') {
+			this._promise.then(fn);
+		} else if (event === 'error') {
+			this._promise.catch(fn)
+		} else if (event === 'end') {
+			this._promise.finally(fn);
+		}
+		return this;
+	}
+
+	static from (promise: Promise<Uint8Array>): Readable {
+		return new Readable(promise);
+	}
 }
