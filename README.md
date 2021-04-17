@@ -85,7 +85,7 @@ Name | Type | Description |
 
 **Returns:** *Promise*<ndarray\>
 
-Defined in: [index.ts:17](https://github.com/donmccurdy/ndarray-pixels/blob/00cf2af/src/index.ts#L17)
+Defined in: [index.ts:17](https://github.com/donmccurdy/ndarray-pixels/blob/b915d49/src/index.ts#L17)
 
 ___
 
@@ -111,5 +111,5 @@ Name | Type | Description |
 
 **Returns:** *Promise*<Uint8Array\>
 
-Defined in: [index.ts:48](https://github.com/donmccurdy/ndarray-pixels/blob/00cf2af/src/index.ts#L48)
+Defined in: [index.ts:48](https://github.com/donmccurdy/ndarray-pixels/blob/b915d49/src/index.ts#L48)
 <!--- API END --->
