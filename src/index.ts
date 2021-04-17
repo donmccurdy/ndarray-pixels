@@ -1,6 +1,6 @@
-import _getPixels from 'get-pixels';
+import getPixelsInternal from 'get-pixels';
 import ndarray from 'ndarray';
-import _savePixels from 'save-pixels';
+import savePixelsInternal from 'save-pixels';
 
 /**
  * Decodes an image (image/png or image/jpeg in Node.js, any with browser support on Web) to an
@@ -15,7 +15,7 @@ import _savePixels from 'save-pixels';
  */
 async function getPixels (data: string | Uint8Array, mimeType?: string): Promise<ndarray> {
     return new Promise((resolve, reject) => {
-        _getPixels(data, mimeType, (err?: Error, pixels?: ndarray) => {
+        getPixelsInternal(data, mimeType, (err?: Error, pixels?: ndarray) => {
             if (pixels && !err) {
                 resolve(pixels);
             } else {
@@ -38,7 +38,7 @@ async function getPixels (data: string | Uint8Array, mimeType?: string): Promise
 async function savePixels (pixels: ndarray, mimeType: string): Promise<Uint8Array> {
     return new Promise((resolve, reject) => {
         const chunks: Uint8Array[] = [];
-        _savePixels(pixels, mimeType.replace('image/', ''))
+        savePixelsInternal(pixels, mimeType.replace('image/', ''))
             .on('data', (d: Uint8Array) => chunks.push(d))
             .on('end', () => resolve(concat(chunks)))
             .on('error', (e: Error) => reject(e));
