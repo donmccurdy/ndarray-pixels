@@ -16,9 +16,9 @@
   "license": "MIT",
   "scripts": {
     "dist": "yarn dist:node && yarn dist:browser:modern && yarn dist:browser:cjs",
-    "dist:node": "microbundle build --raw --target node -f cjs src/node.ts -o dist/ndarray-pixels.js",
-    "dist:browser:modern": "microbundle build --raw --target web -f modern src/browser.ts -o dist/ndarray-pixels-browser.js",
-    "dist:browser:cjs": "microbundle build --raw --target web -f cjs src/browser.ts -o dist/ndarray-pixels-browser.js",
+    "dist:node": "microbundle build --raw --target node --format cjs src/index.ts --output dist/ndarray-pixels.js",
+    "dist:browser:modern": "microbundle build --raw --target web --format modern src/index.ts --output dist/ndarray-pixels-browser.js --alias get-pixels=./browser-get-pixels.ts,save-pixels=./browser-save-pixels.ts",
+    "dist:browser:cjs": "microbundle build --raw --target web --format cjs src/index.ts --output dist/ndarray-pixels-browser.js --alias get-pixels=./browser-get-pixels.ts,save-pixels=./browser-save-pixels.ts",
     "test": "yarn test:node && yarn test:browser",
     "test:node": "tape test/node.test.js | tap-spec",
     "test:browser": "browserify test/browser.test.js | tape-run | tap-spec",

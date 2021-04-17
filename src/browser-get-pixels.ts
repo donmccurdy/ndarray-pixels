@@ -2,10 +2,11 @@ import ndarray from 'ndarray';
 
 export type GetPixelsCallback = (err: string | Event | null, pixels?: ndarray) => void;
 
-export function getPixels(path: string, callback: GetPixelsCallback): void;
-export function getPixels(path: string | Uint8Array, type: string, callback: GetPixelsCallback): void
-export function getPixels(path: string | Uint8Array, typeOrCallback: string | GetPixelsCallback, callback?: GetPixelsCallback): void {
+export default getPixels;
 
+function getPixels(path: string, callback: GetPixelsCallback): void;
+function getPixels(path: string | Uint8Array, type: string, callback: GetPixelsCallback): void
+function getPixels(path: string | Uint8Array, typeOrCallback: string | GetPixelsCallback, callback?: GetPixelsCallback): void {
 	callback = callback || typeOrCallback as GetPixelsCallback;
 
 	// Construct a Blob URL for Uint8Array inputs.

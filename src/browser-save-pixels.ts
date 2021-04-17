@@ -3,10 +3,12 @@ import ops from 'ndarray-ops';
 
 export interface SavePixelsOptions {quality?: number};
 
-export function savePixels(array: ndarray, type: 'canvas'): HTMLCanvasElement;
-export function savePixels(array: ndarray, type: 'png'): Readable;
-export function savePixels(array: ndarray, type: 'jpeg' | 'jpg', options?: SavePixelsOptions): Readable;
-export function savePixels(array: ndarray, type: 'canvas' | 'png' | 'jpeg' | 'jpg', options: SavePixelsOptions = {}): Readable | HTMLCanvasElement {
+export default savePixels;
+
+function savePixels(array: ndarray, type: 'canvas'): HTMLCanvasElement;
+function savePixels(array: ndarray, type: 'png'): Readable;
+function savePixels(array: ndarray, type: 'jpeg' | 'jpg', options?: SavePixelsOptions): Readable;
+function savePixels(array: ndarray, type: 'canvas' | 'png' | 'jpeg' | 'jpg', options: SavePixelsOptions = {}): Readable | HTMLCanvasElement {
 	// Create HTMLCanvasElement and write pixel data.
 	const canvas = document.createElement('canvas');
 	canvas.width = array.shape[0];
