@@ -6,27 +6,48 @@ Convert ndarray ↔ image data, for Web and Node.js.
 
 Based on [get-pixels](https://www.npmjs.com/package/get-pixels) and [save-pixels](https://www.npmjs.com/package/save-pixels), adding compatibility with modern web bundlers. Node.js builds reuse `save-pixels` and `get-pixels` packages directly. Because those packages rely on Node.js builtins — unfortunately requiring per-bundler configuration and larger bundle sizes — web builds reimplement the same functionality with the more portable Canvas API, and do not currently support GIF decoding/encoding.
 
+In Node.js, JPEG and PNG are supported. On the Web, additional formats are supported according to [browser capabilities](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob).
+
 ## Quickstart
 
 ```
 npm install --save ndarray-pixels
 ```
 
+### Web
+
 ```javascript
-import ndarray from 'ndarray';
 import { getPixels, savePixels } from 'ndarray-pixels';
 
+const bytesIn = await fetch('./input.png')
+    .then((res) => res.arrayBuffer())
+    .then((arrayBuffer) => new Uint8Array(arrayBuffer));
+
+const pixels = await getPixels(bytesIn, 'image/png'); // Uint8Array -> ndarray
+
+// ... modify ndarray ...
+
+const bytesOut = await savePixels(pixels, 'image/png'); // ndarray -> Uint8Array
+```
+
+
+### Node.js
+
+```javascript
+const fs = require('fs');
+const { getPixels, savePixels } = require('ndarray-pixels');
+
+const bufferIn = fs.readFileSync('./input.png');
 const pixels = await getPixels(bufferIn, 'image/png'); // Uint8Array -> ndarray
 
 // ... modify ndarray ...
 
 const bufferOut = await savePixels(pixels, 'image/png'); // ndarray -> Uint8Array
+fs.writeFileSync('./output.png', bufferOut);
 ```
 
-Note that the Uint8Array data is encoded with the given MIME type. In Node.js, JPEG and PNG are supported. On the Web, support varies by browser.
+Note that the Uint8Array data is encoded with the given MIME type.
 
 ## To Do
 
-The Node.js implementation does not seem totally happy with a Uint8Array as input. See test, not sure why.
-
-For whatever reason the typings aren't coming through in gltf-transform right now.
+- [ ] The Node.js implementation seems to break when given an Uint8Array instead of a Buffer; see test suite.
