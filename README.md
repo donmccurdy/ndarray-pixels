@@ -1,5 +1,10 @@
 # ndarray-pixels
 
+[![Latest NPM release](https://img.shields.io/npm/v/ndarray-pixels.svg)](https://www.npmjs.com/package/ndarray-pixels)
+[![License](https://img.shields.io/badge/license-MIT-007ec6.svg)](https://github.com/donmccurdy/ndarray-pixels/blob/main/LICENSE)
+[![CI](https://github.com/donmccurdy/ndarray-pixels/workflows/CI/badge.svg?branch=main&event=push)](https://github.com/donmccurdy/ndarray-pixels/actions?query=workflow%3ACI)
+[![Coverage Status](https://coveralls.io/repos/github/donmccurdy/ndarray-pixels/badge.svg?branch=main)](https://coveralls.io/github/donmccurdy/ndarray-pixels?branch=main)
+
 > **WORK IN PROGRESS**: Experimental.
 
 Convert [ndarray](https://www.npmjs.com/package/ndarray) ↔ image data, on Web and Node.js.
