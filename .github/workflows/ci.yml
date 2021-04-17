@@ -19,6 +19,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: yarn install
     - run: yarn dist
-    - run: yarn test
+    - run: sudo apt-get install xvfb
+    - run: yarn test:node
+    - run: xvfb-run --auto-servernum yarn test:browser
       env:
         CI: true
