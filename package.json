@@ -1,6 +1,6 @@
 {
   "name": "ndarray-pixels",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "ndarray-pixels",
   "main": "./dist/ndarray-pixels.js",
   "module": "./dist/ndarray-pixels.modern.js",
