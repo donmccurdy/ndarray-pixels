@@ -11,6 +11,7 @@
       "require": "./dist/ndarray-pixels.js"
     }
   },
+  "sideEffects": false,
   "repository": "github:donmccurdy/ndarray-pixels",
   "author": "Don McCurdy <dm@donmccurdy.com>",
   "license": "MIT",
@@ -24,7 +25,7 @@
     "test:browser": "browserify test/browser.test.js | tape-run | tap-spec",
     "preversion": "yarn dist && yarn test",
     "version": "yarn dist && git add -u",
-    "postversion": "git push && git push --tags && npm publish && yarn coverage:report"
+    "postversion": "git push && git push --tags && npm publish"
   },
   "dependencies": {
     "@types/ndarray": "^1.0.8",
