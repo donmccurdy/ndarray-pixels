@@ -4,7 +4,9 @@
 
 Convert [ndarray](https://www.npmjs.com/package/ndarray) ↔ image data, on Web and Node.js.
 
-In Node.js, this package uses [get-pixels](https://www.npmjs.com/package/get-pixels) and [save-pixels](https://www.npmjs.com/package/save-pixels). While both packages could be used on the web, they require polyfills for Node.js builtins. Browserify handles that automatically, but more modern bundlers do not. Moreover, the polyfills increase package size significantly. To avoid these problems, web builds of 'ndarray-pixels' reimplement the same functionality with the more portable Canvas API.
+Designed to be used with [other ndarray-based packages](http://scijs.net/packages/).
+
+In Node.js, this package uses [get-pixels](https://www.npmjs.com/package/get-pixels) and [save-pixels](https://www.npmjs.com/package/save-pixels). While both packages could be used on the web, they require polyfills for Node.js builtins. Browserify handles that automatically, but more modern bundlers do not. Moreover, the polyfills increase package size significantly. To avoid these problems, web builds of `ndarray-pixels` reimplement the same functionality with the more portable Canvas API.
 
 ## Supported Formats
 
