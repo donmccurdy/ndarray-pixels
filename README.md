@@ -21,7 +21,6 @@ In Node.js, this package uses [get-pixels](https://www.npmjs.com/package/get-pix
 
 ### Known Bugs
 
-- [ ] Node.js implementation may break when given an Uint8Array instead of a Buffer; see test suite.
 - [ ] Web implementation premultiplies alpha, as a result of Canvas 2D usage.
 
 ## Quickstart

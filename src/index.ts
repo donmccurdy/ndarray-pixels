@@ -3,17 +3,23 @@ import ndarray from 'ndarray';
 import savePixelsInternal from 'save-pixels';
 
 /**
- * Decodes an image (image/png or image/jpeg in Node.js, any with browser support on Web) to an
- * ndarray.
+ * Decodes image data to an `ndarray`.
  *
- * MIME type is optional when given a path or URL, and required when given a Uint8Array. On
- * Node.js, it may be necessary to convert the Uint8Array to a Buffer, with Buffer.from(array).
+ * MIME type is optional when given a path or URL, and required when given a Uint8Array.
+ *
+ * Accepts `image/png` or `image/jpeg` in Node.js, and additional formats on browsers with
+ * the necessary support in Canvas 2D.
  *
  * @param data
- * @param mimeType
+ * @param mimeType `image/jpeg`, `image/png`, etc.
  * @returns
  */
 async function getPixels (data: string | Uint8Array, mimeType?: string): Promise<ndarray> {
+    // In Node.js, get-pixels needs a Buffer and won't accept Uint8Array.
+    if (data instanceof Uint8Array && typeof Buffer !== 'undefined') {
+        data = Buffer.from(data);
+    }
+
     return new Promise((resolve, reject) => {
         getPixelsInternal(data, mimeType, (err?: Error, pixels?: ndarray) => {
             if (pixels && !err) {
@@ -26,13 +32,17 @@ async function getPixels (data: string | Uint8Array, mimeType?: string): Promise
 }
 
 /**
- * Encodes an image (image/png or image/jpeg in Node.js, any with browser support on Web), given an ndarray.
+ * Encodes an `ndarray` as image data in the given format.
  *
- * If the source ndarray was constructed with default stride, you may need .transpose(1, 0) to get the result
- * you expect, i.e. an identical result from getPixels().
+ * If the source `ndarray` was constructed manually with default stride, use
+ * `ndarray.transpose(1, 0)` to reshape it and ensure an identical result from getPixels(). For an
+ * ndarray created by getPixels(), this isn't necessary.
+ *
+ * Accepts `image/png` or `image/jpeg` in Node.js, and additional formats on browsers with
+ * the necessary support in Canvas 2D.
  *
  * @param pixels ndarray of shape W x H x 4.
- * @param mimeType
+ * @param mimeType `image/jpeg`, `image/png`, etc.
  * @returns
  */
 async function savePixels (pixels: ndarray, mimeType: string): Promise<Uint8Array> {
@@ -47,8 +57,8 @@ async function savePixels (pixels: ndarray, mimeType: string): Promise<Uint8Arra
 
 function concat (arrays: Uint8Array[]): Uint8Array {
     let totalByteLength = 0;
-    for (const buffer of arrays) {
-        totalByteLength += buffer.byteLength;
+    for (const array of arrays) {
+        totalByteLength += array.byteLength;
     }
 
     const result = new Uint8Array(totalByteLength);
