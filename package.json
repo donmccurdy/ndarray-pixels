@@ -4,7 +4,7 @@
   "description": "ndarray-pixels",
   "main": "./dist/ndarray-pixels.js",
   "module": "./dist/ndarray-pixels.modern.js",
-  "types": "./dist/node.d.ts",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "browser": "./dist/ndarray-pixels.modern.js",
@@ -20,6 +20,7 @@
     "dist:node": "microbundle build --raw --target node --format cjs src/index.ts --output dist/ndarray-pixels.js",
     "dist:browser:modern": "microbundle build --raw --target web --format modern src/index.ts --output dist/ndarray-pixels-browser.js --alias get-pixels=./browser-get-pixels.ts,save-pixels=./browser-save-pixels.ts",
     "dist:browser:cjs": "microbundle build --raw --target web --format cjs src/index.ts --output dist/ndarray-pixels-browser.js --alias get-pixels=./browser-get-pixels.ts,save-pixels=./browser-save-pixels.ts",
+    "clean": "rm -rf dist/*",
     "test": "yarn test:node && yarn test:browser",
     "test:node": "tape test/node.test.js | tap-spec",
     "test:browser": "browserify test/browser.test.js | tape-run | tap-spec",
