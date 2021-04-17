@@ -69,22 +69,23 @@ fs.writeFileSync('./output.png', bufferOut);
 
 ▸ **getPixels**(`data`: *string* \| Uint8Array, `mimeType?`: *string*): *Promise*<ndarray\>
 
-Decodes an image (image/png or image/jpeg in Node.js, any with browser support on Web) to an
-ndarray.
+Decodes image data to an `ndarray`.
 
-MIME type is optional when given a path or URL, and required when given a Uint8Array. On
-Node.js, it may be necessary to convert the Uint8Array to a Buffer, with Buffer.from(array).
+MIME type is optional when given a path or URL, and required when given a Uint8Array.
+
+Accepts `image/png` or `image/jpeg` in Node.js, and additional formats on browsers with
+the necessary support in Canvas 2D.
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`data` | *string* \| Uint8Array |
-`mimeType?` | *string* |
+Name | Type | Description |
+:------ | :------ | :------ |
+`data` | *string* \| Uint8Array |  |
+`mimeType?` | *string* | `image/jpeg`, `image/png`, etc.   |
 
 **Returns:** *Promise*<ndarray\>
 
-Defined in: [index.ts:16](https://github.com/donmccurdy/ndarray-pixels/blob/bc81779/src/index.ts#L16)
+Defined in: [index.ts:17](https://github.com/donmccurdy/ndarray-pixels/blob/00cf2af/src/index.ts#L17)
 
 ___
 
@@ -92,19 +93,23 @@ ___
 
 ▸ **savePixels**(`pixels`: ndarray, `mimeType`: *string*): *Promise*<Uint8Array\>
 
-Encodes an image (image/png or image/jpeg in Node.js, any with browser support on Web), given an ndarray.
+Encodes an `ndarray` as image data in the given format.
 
-If the source ndarray was constructed with default stride, you may need .transpose(1, 0) to get the result
-you expect, i.e. an identical result from getPixels().
+If the source `ndarray` was constructed manually with default stride, use
+`ndarray.transpose(1, 0)` to reshape it and ensure an identical result from getPixels(). For an
+ndarray created by getPixels(), this isn't necessary.
+
+Accepts `image/png` or `image/jpeg` in Node.js, and additional formats on browsers with
+the necessary support in Canvas 2D.
 
 #### Parameters:
 
 Name | Type | Description |
 :------ | :------ | :------ |
 `pixels` | ndarray | ndarray of shape W x H x 4.   |
-`mimeType` | *string* |  |
+`mimeType` | *string* | `image/jpeg`, `image/png`, etc.   |
 
 **Returns:** *Promise*<Uint8Array\>
 
-Defined in: [index.ts:38](https://github.com/donmccurdy/ndarray-pixels/blob/bc81779/src/index.ts#L38)
+Defined in: [index.ts:48](https://github.com/donmccurdy/ndarray-pixels/blob/00cf2af/src/index.ts#L48)
 <!--- API END --->
