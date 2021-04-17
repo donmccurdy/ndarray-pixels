@@ -8,6 +8,11 @@ Designed to be used with [other ndarray-based packages](http://scijs.net/package
 
 In Node.js, this package uses [get-pixels](https://www.npmjs.com/package/get-pixels) and [save-pixels](https://www.npmjs.com/package/save-pixels). While both packages could be used on the web, they require polyfills for Node.js builtins. Browserify handles that automatically, but more modern bundlers do not. Moreover, the polyfills increase package size significantly. To avoid these problems, web builds of `ndarray-pixels` reimplement the same functionality with the more portable Canvas API.
 
+## Known Bugs
+
+- [ ] Node.js implementation may break when given an Uint8Array instead of a Buffer; see test suite.
+- [ ] Web implementation premultiplies alpha, as a result of Canvas 2D usage.
+
 ## Supported Formats
 
 | Platform | JPEG | PNG | Other |
@@ -52,7 +57,3 @@ const pixels = await getPixels(bufferIn, 'image/png'); // Uint8Array -> ndarray
 const bufferOut = await savePixels(pixels, 'image/png'); // ndarray -> Uint8Array
 fs.writeFileSync('./output.png', bufferOut);
 ```
-
-## To Do
-
-- [ ] The Node.js implementation seems to break when given an Uint8Array instead of a Buffer; see test suite.
