@@ -26,7 +26,7 @@
     "test:browser": "browserify test/browser.test.js | tape-run | tap-spec",
     "docs": "typedoc src/index.ts --plugin typedoc-plugin-markdown --out ./docs --hideBreadcrumbs && cat docs/modules.md | tail -n +12 | replace-between --target README.md --token API && rm -rf docs",
     "preversion": "yarn dist && yarn test",
-    "version": "yarn dist && git add -u",
+    "version": "yarn dist && yarn docs && git add -u",
     "postversion": "git push && git push --tags && npm publish"
   },
   "dependencies": {
