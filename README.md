@@ -2,11 +2,16 @@
 
 > **WORK IN PROGRESS**: Experimental.
 
-Convert ndarray ↔ image data, for Web and Node.js.
+Convert [ndarray](https://www.npmjs.com/package/ndarray) ↔ image data, on Web and Node.js.
 
-Based on [get-pixels](https://www.npmjs.com/package/get-pixels) and [save-pixels](https://www.npmjs.com/package/save-pixels), adding compatibility with modern web bundlers. Node.js builds reuse `save-pixels` and `get-pixels` packages directly. Because those packages rely on Node.js builtins — unfortunately requiring per-bundler configuration and larger bundle sizes — web builds reimplement the same functionality with the more portable Canvas API, and do not currently support GIF decoding/encoding.
+In Node.js, this package uses [get-pixels](https://www.npmjs.com/package/get-pixels) and [save-pixels](https://www.npmjs.com/package/save-pixels). While both packages could be used on the web, they require polyfills for Node.js builtins. Browserify handles that automatically, but more modern bundlers do not. Moreover, the polyfills increase package size significantly. To avoid these problems, web builds of 'ndarray-pixels' reimplement the same functionality with the more portable Canvas API.
 
-In Node.js, JPEG and PNG are supported. On the Web, additional formats are supported according to [browser capabilities](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob).
+## Supported Formats
+
+| Platform | JPEG | PNG | Other |
+|----------|------|-----|-------|
+| Node.js  | ✅   | ✅ | ❌      |
+| Web      | ✅   | ✅ | Based on [browser support](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob) |
 
 ## Quickstart
 
@@ -45,8 +50,6 @@ const pixels = await getPixels(bufferIn, 'image/png'); // Uint8Array -> ndarray
 const bufferOut = await savePixels(pixels, 'image/png'); // ndarray -> Uint8Array
 fs.writeFileSync('./output.png', bufferOut);
 ```
-
-Note that the Uint8Array data is encoded with the given MIME type.
 
 ## To Do
 
