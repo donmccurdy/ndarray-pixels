@@ -24,6 +24,7 @@
     "test": "yarn test:node && yarn test:browser",
     "test:node": "tape test/node.test.js | tap-spec",
     "test:browser": "browserify test/browser.test.js | tape-run | tap-spec",
+    "docs": "typedoc src/index.ts --plugin typedoc-plugin-markdown --out ./docs --hideBreadcrumbs && cat docs/modules.md | tail -n +12 | replace-between --target README.md --token API && rm -rf docs",
     "preversion": "yarn dist && yarn test",
     "version": "yarn dist && git add -u",
     "postversion": "git push && git push --tags && npm publish"
@@ -45,10 +46,13 @@
     "eslint": "^7.24.0",
     "microbundle": "^0.13.0",
     "regenerator-runtime": "^0.13.7",
+    "replace-between": "^0.0.8",
     "source-map-support": "^0.5.19",
     "tap-spec": "^5.0.0",
     "tape": "^5.2.2",
     "tape-run": "^9.0.0",
+    "typedoc": "^0.20.35",
+    "typedoc-plugin-markdown": "^3.6.1",
     "typescript": "^4.2.4"
   },
   "files": [
