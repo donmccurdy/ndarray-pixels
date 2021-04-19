@@ -5,12 +5,6 @@
   "main": "./dist/ndarray-pixels.js",
   "module": "./dist/ndarray-pixels-browser.modern.js",
   "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "browser": "./dist/ndarray-pixels-browser.modern.js",
-      "require": "./dist/ndarray-pixels.js"
-    }
-  },
   "sideEffects": false,
   "repository": "github:donmccurdy/ndarray-pixels",
   "author": "Don McCurdy <dm@donmccurdy.com>",
