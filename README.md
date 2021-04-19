@@ -2,9 +2,8 @@
 
 [![Latest NPM release](https://img.shields.io/npm/v/ndarray-pixels.svg)](https://www.npmjs.com/package/ndarray-pixels)
 [![License](https://img.shields.io/badge/license-MIT-007ec6.svg)](https://github.com/donmccurdy/ndarray-pixels/blob/main/LICENSE)
+[![Minzipped size](https://badgen.net/bundlephobia/minzip/ndarray-pixels)](https://bundlephobia.com/result?p=ndarray-pixels)
 [![CI](https://github.com/donmccurdy/ndarray-pixels/workflows/CI/badge.svg?branch=main&event=push)](https://github.com/donmccurdy/ndarray-pixels/actions?query=workflow%3ACI)
-
-> **WORK IN PROGRESS**: Experimental.
 
 Convert [ndarray](https://www.npmjs.com/package/ndarray) ↔ image data, on Web and Node.js.
 
@@ -21,7 +20,7 @@ In Node.js, this package uses [get-pixels](https://www.npmjs.com/package/get-pix
 
 ### Known Bugs
 
-- [ ] Web implementation premultiplies alpha, as a result of Canvas 2D usage.
+- [ ] Web implementation (Canvas 2D) premultiplies alpha.
 
 ## Quickstart
 
