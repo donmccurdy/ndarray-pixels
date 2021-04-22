@@ -1,14 +1,18 @@
 import ndarray from 'ndarray';
 import ops from 'ndarray-ops';
 
-export interface SavePixelsOptions {quality?: number};
+export interface SavePixelsOptions {quality?: number}
 
 export default savePixels;
 
 function savePixels(array: ndarray, type: 'canvas'): HTMLCanvasElement;
 function savePixels(array: ndarray, type: 'png'): Readable;
 function savePixels(array: ndarray, type: 'jpeg' | 'jpg', options?: SavePixelsOptions): Readable;
-function savePixels(array: ndarray, type: 'canvas' | 'png' | 'jpeg' | 'jpg', options: SavePixelsOptions = {}): Readable | HTMLCanvasElement {
+function savePixels(
+	array: ndarray, type: 'canvas' | 'png' | 'jpeg' | 'jpg',
+	options: SavePixelsOptions = {}
+): Readable | HTMLCanvasElement {
+
 	// Create HTMLCanvasElement and write pixel data.
 	const canvas = document.createElement('canvas');
 	canvas.width = array.shape[0];
@@ -26,13 +30,15 @@ function savePixels(array: ndarray, type: 'canvas' | 'png' | 'jpeg' | 'jpg', opt
 
 	context.putImageData(imageData, 0, 0);
 
+	const quality = options.quality ? options.quality / 100 : undefined;
+
 	// Encode to target format.
 	switch (type) {
 		case 'canvas':
 			return canvas;
 		case 'jpg':
 		case 'jpeg':
-			return streamCanvas(canvas, 'image/jpeg', options.quality ? options.quality / 100 : undefined);
+			return streamCanvas(canvas, 'image/jpeg', quality);
 		case 'png':
 			return streamCanvas(canvas, 'image/png');
 		default:
@@ -42,7 +48,7 @@ function savePixels(array: ndarray, type: 'canvas' | 'png' | 'jpeg' | 'jpg', opt
 
 /** Creates readable stream from given HTMLCanvasElement and options. */
 function streamCanvas(canvas: HTMLCanvasElement, mimeType: string, quality?: number): Readable {
-	const promise = new Promise<Uint8Array>(async (resolve, reject) => {
+	const promise = new Promise<Uint8Array>((resolve, reject) => {
 		canvas.toBlob(async (blob) => {
 			if (blob) {
 				resolve(new Uint8Array(await blob.arrayBuffer()));
@@ -54,7 +60,12 @@ function streamCanvas(canvas: HTMLCanvasElement, mimeType: string, quality?: num
 	return Readable.from(promise);
 }
 
-function handleData(array: ndarray, data: Uint8Array | Uint8ClampedArray, frame = -1): Uint8Array | Uint8ClampedArray {
+function handleData(
+	array: ndarray,
+	data: Uint8Array | Uint8ClampedArray,
+	frame = -1
+): Uint8Array | Uint8ClampedArray {
+
 	if (array.shape.length === 4) {
 		return handleData(array.pick(frame), data, 0);
 	} else if (array.shape.length === 3) {

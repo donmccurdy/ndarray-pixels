@@ -21,7 +21,7 @@ async function getPixels (data: string | Uint8Array, mimeType?: string): Promise
     }
 
     return new Promise((resolve, reject) => {
-        getPixelsInternal(data, mimeType, (err?: Error, pixels?: ndarray) => {
+        getPixelsInternal(data, mimeType!, (err: Error | null, pixels: ndarray) => {
             if (pixels && !err) {
                 resolve(pixels);
             } else {
@@ -48,7 +48,8 @@ async function getPixels (data: string | Uint8Array, mimeType?: string): Promise
 async function savePixels (pixels: ndarray, mimeType: string): Promise<Uint8Array> {
     return new Promise((resolve, reject) => {
         const chunks: Uint8Array[] = [];
-        savePixelsInternal(pixels, mimeType.replace('image/', ''))
+        const internalType = mimeType.replace('image/', '') as 'png' | 'gif';
+        savePixelsInternal(pixels, internalType)
             .on('data', (d: Uint8Array) => chunks.push(d))
             .on('end', () => resolve(concat(chunks)))
             .on('error', (e: Error) => reject(e));
