@@ -1115,10 +1115,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/save-pixels@2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@types/save-pixels/-/save-pixels-2.3.0.tgz#77f6b58ad3503d17106c5a3a7f7e19573e8ef2e9"
-  integrity sha512-fBipjGM+ohrl7r7tJZ9pEFt9EU2LQR4kCNGZxccMHWh0DnTYH6ewuvLr+f23mE7KxUMsud0yfU9r+vsJIbOkug==
+"@types/save-pixels@2.3.2":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@types/save-pixels/-/save-pixels-2.3.2.tgz#6fbf7cc5ad44b0ecd70be93abc9d962db5946cd6"
+  integrity sha512-B3q1uG7sddVibKTBOcSRyFZoU0ItIv6tW5ob9CPksrSA4ivj2MMtTWxb6P8zcfm1qJLod2AyPWT7i6vPdDXxRw==
   dependencies:
     "@types/ndarray" "*"
     "@types/node" "*"
