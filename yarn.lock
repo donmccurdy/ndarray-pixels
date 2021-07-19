@@ -1068,10 +1068,10 @@
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-0.0.39.tgz#e177e699ee1b8c22d23174caaa7422644389509f"
   integrity sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==
 
-"@types/get-pixels@3.3.0":
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/@types/get-pixels/-/get-pixels-3.3.0.tgz#8bbe0898e4df19e68ed5ac7c190ff397ec130631"
-  integrity sha512-eqWklQ7dQJCFFzCpHkqXmUQup6/2yYub4ypwHxIA5FkCZlmU2vcKlpT2zUqXVMwFbArTHIfys0SqePe21PDx+w==
+"@types/get-pixels@3.3.1":
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/@types/get-pixels/-/get-pixels-3.3.1.tgz#457713539932246fea1bea3d1fd3b37af5cf5f40"
+  integrity sha512-i2Wsjxfvce3/IPxBBSGqneWXQ14boqTVVeuG7SIhz3EYBPM/6XNobcwe1o8hpZ2K2DeJ/H9oSGZqlJcYabhVCQ==
   dependencies:
     "@types/ndarray" "*"
     "@types/node" "*"
