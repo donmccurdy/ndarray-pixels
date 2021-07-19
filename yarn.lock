@@ -1081,10 +1081,10 @@
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.7.tgz#98a993516c859eb0d5c4c8f098317a9ea68db9ad"
   integrity sha512-cxWFQVseBm6O9Gbw1IWb8r6OS4OhSt3hPZLkFApLjM8TEXROBuQGLAH2i2gZpcXdLBIrpXuTDhH7Vbm1iXmNGA==
 
-"@types/ndarray-ops@1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@types/ndarray-ops/-/ndarray-ops-1.2.0.tgz#cb8d2303f975186b1503957f78ebc7b38f7917de"
-  integrity sha512-b6OQ2XKQHeiSpFPa8+YW0clLiwlo3V3C7PbbgHZmQ1yPzFAt0hB0BOJqqdOctjObM1i7A2hFxt0ywwVvFHW4+A==
+"@types/ndarray-ops@1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@types/ndarray-ops/-/ndarray-ops-1.2.1.tgz#79a69aed1174c4470d03f8500aef4eea711e27d9"
+  integrity sha512-7/YLEgLjdaKL+M9uvajyL0yJOXYOqEL/i7BCnnw2sQSahy1yJjtt60RKw5gAtuD+GHUGMMHcWlUmnPQM7YLJkA==
   dependencies:
     "@types/ndarray" "*"
 
