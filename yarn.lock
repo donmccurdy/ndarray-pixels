@@ -1128,10 +1128,10 @@
     "@types/ndarray" "*"
     "@types/node" "*"
 
-"@types/tape@4.13.1":
-  version "4.13.1"
-  resolved "https://registry.yarnpkg.com/@types/tape/-/tape-4.13.1.tgz#b789e28d0e7c558a08da8b8986298d46b71f6cf1"
-  integrity sha512-p6eHt3Yi7C9o7lpjchpVnfKb3ldFjHR/1sBaQdpuZnjAFtsc2UgsFlu+XKQH2l5pgt98oFcINYNTRAwWbrZjnw==
+"@types/tape@4.13.2":
+  version "4.13.2"
+  resolved "https://registry.yarnpkg.com/@types/tape/-/tape-4.13.2.tgz#77215c065b1c7840da3ca5e061337bb4c7258122"
+  integrity sha512-V1ez/RtYRGN9cNYApw5xf27DpMkTB0033X6a2i3KUmKhSojBfbWN0i3EgZxboUG96WJLHLdOyZ01aiZwVW5aSA==
   dependencies:
     "@types/node" "*"
 
