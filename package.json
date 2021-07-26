@@ -39,7 +39,7 @@
     "@typescript-eslint/eslint-plugin": "4.22.0",
     "@typescript-eslint/parser": "4.22.0",
     "browserify": "17.0.0",
-    "eslint": "7.24.0",
+    "eslint": "7.31.0",
     "microbundle": "0.13.3",
     "regenerator-runtime": "0.13.7",
     "replace-between": "0.0.8",
