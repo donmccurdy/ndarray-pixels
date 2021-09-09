@@ -43,7 +43,7 @@
     "microbundle": "0.13.3",
     "regenerator-runtime": "0.13.9",
     "replace-between": "0.0.8",
-    "source-map-support": "0.5.19",
+    "source-map-support": "0.5.20",
     "tap-spec": "5.0.0",
     "tape": "5.3.1",
     "tape-run": "9.0.0",
