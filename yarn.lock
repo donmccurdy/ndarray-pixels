@@ -1112,10 +1112,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.41.tgz#d0b939d94c1d7bd53d04824af45f1139b8c45615"
   integrity sha512-dueRKfaJL4RTtSa7bWeTK1M+VH+Gns73oCgzvYfHZywRCoPSd8EkXBL0mZ9unPTveBn+D9phZBaxuzpwjWkW0g==
 
-"@types/node@14.17.15":
-  version "14.17.15"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.17.15.tgz#d5ebfb62a69074ebb85cbe0529ad917bb8f2bae8"
-  integrity sha512-D1sdW0EcSCmNdLKBGMYb38YsHUS6JcM7yQ6sLQ9KuZ35ck7LYCKE7kYFHOO59ayFOY3zobWVZxf4KXhYHcHYFA==
+"@types/node@14.17.16":
+  version "14.17.16"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.17.16.tgz#2b9252bd4fdf0393696190cd9550901dd967c777"
+  integrity sha512-WiFf2izl01P1CpeY8WqFAeKWwByMueBEkND38EcN8N68qb0aDG3oIS1P5MhAX5kUdr469qRyqsY/MjanLjsFbQ==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -6644,10 +6644,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typedoc-plugin-markdown@3.10.4:
-  version "3.10.4"
-  resolved "https://registry.yarnpkg.com/typedoc-plugin-markdown/-/typedoc-plugin-markdown-3.10.4.tgz#4e0e9c584a1e421beafa4c3666896615f069da6b"
-  integrity sha512-if9w7S9fXLg73AYi/EoRSEhTOZlg3I8mIP8YEmvzSE33VrNXC9/hA0nVcLEwFVJeQY7ay6z67I6kW0KIv7LjeA==
+typedoc-plugin-markdown@3.11.0:
+  version "3.11.0"
+  resolved "https://registry.yarnpkg.com/typedoc-plugin-markdown/-/typedoc-plugin-markdown-3.11.0.tgz#1ae3f92cc259cb10503099eb1a7f53c05f331674"
+  integrity sha512-zewcbzOlMV9nbhLsJhKBpoRW4J32LgbfdqwYfEfzzeE+wGOaOfsM6g7QH+ZKj8n+knH4sLCtk6XMN1TI/a1UuQ==
   dependencies:
     handlebars "^4.7.7"
 
