@@ -24,16 +24,16 @@
     "postversion": "git push && git push --tags && npm publish"
   },
   "dependencies": {
-    "@types/ndarray": "^1.0.8",
-    "get-pixels": "^3.3.2",
+    "@types/ndarray": "^1.0.10",
+    "get-pixels": "^3.3.3",
     "ndarray": "^1.0.19",
     "ndarray-ops": "^1.2.2",
-    "save-pixels": "^2.3.4"
+    "save-pixels": "^2.3.6"
   },
   "devDependencies": {
     "@types/get-pixels": "3.3.1",
     "@types/ndarray-ops": "1.2.1",
-    "@types/node": "14.17.16",
+    "@types/node": "16.9.2",
     "@types/save-pixels": "2.3.2",
     "@types/tape": "4.13.2",
     "@typescript-eslint/eslint-plugin": "4.31.1",

@@ -1,6 +1,7 @@
 import ndarray from 'ndarray';
+import type { NdArray } from 'ndarray';
 
-export type GetPixelsCallback = (err: string | Event | null, pixels?: ndarray) => void;
+export type GetPixelsCallback = (err: string | Event | null, pixels?: NdArray) => void;
 
 export default getPixels;
 

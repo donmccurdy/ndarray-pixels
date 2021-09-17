@@ -1,15 +1,16 @@
 import ndarray from 'ndarray';
+import type { NdArray } from 'ndarray';
 import ops from 'ndarray-ops';
 
 export interface SavePixelsOptions {quality?: number}
 
 export default savePixels;
 
-function savePixels(array: ndarray, type: 'canvas'): HTMLCanvasElement;
-function savePixels(array: ndarray, type: 'png'): Readable;
-function savePixels(array: ndarray, type: 'jpeg' | 'jpg', options?: SavePixelsOptions): Readable;
+function savePixels(array: NdArray, type: 'canvas'): HTMLCanvasElement;
+function savePixels(array: NdArray, type: 'png'): Readable;
+function savePixels(array: NdArray, type: 'jpeg' | 'jpg', options?: SavePixelsOptions): Readable;
 function savePixels(
-	array: ndarray, type: 'canvas' | 'png' | 'jpeg' | 'jpg',
+	array: NdArray, type: 'canvas' | 'png' | 'jpeg' | 'jpg',
 	options: SavePixelsOptions = {}
 ): Readable | HTMLCanvasElement {
 
@@ -61,7 +62,7 @@ function streamCanvas(canvas: HTMLCanvasElement, mimeType: string, quality?: num
 }
 
 function handleData(
-	array: ndarray,
+	array: NdArray,
 	data: Uint8Array | Uint8ClampedArray,
 	frame = -1
 ): Uint8Array | Uint8ClampedArray {

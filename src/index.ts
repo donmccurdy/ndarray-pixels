@@ -1,5 +1,5 @@
 import getPixelsInternal from 'get-pixels';
-import ndarray from 'ndarray';
+import type { NdArray } from 'ndarray';
 import savePixelsInternal from 'save-pixels';
 
 /**
@@ -14,14 +14,14 @@ import savePixelsInternal from 'save-pixels';
  * @param mimeType `image/jpeg`, `image/png`, etc.
  * @returns
  */
-async function getPixels (data: string | Uint8Array, mimeType?: string): Promise<ndarray> {
+async function getPixels (data: string | Uint8Array, mimeType?: string): Promise<NdArray> {
     // In Node.js, get-pixels needs a Buffer and won't accept Uint8Array.
     if (data instanceof Uint8Array && typeof Buffer !== 'undefined') {
         data = Buffer.from(data);
     }
 
     return new Promise((resolve, reject) => {
-        getPixelsInternal(data, mimeType!, (err: Error | null, pixels: ndarray) => {
+        getPixelsInternal(data, mimeType!, (err: Error | null, pixels: NdArray) => {
             if (pixels && !err) {
                 resolve(pixels);
             } else {
@@ -45,7 +45,7 @@ async function getPixels (data: string | Uint8Array, mimeType?: string): Promise
  * @param mimeType `image/jpeg`, `image/png`, etc.
  * @returns
  */
-async function savePixels (pixels: ndarray, mimeType: string): Promise<Uint8Array> {
+async function savePixels (pixels: NdArray, mimeType: string): Promise<Uint8Array> {
     return new Promise((resolve, reject) => {
         const chunks: Uint8Array[] = [];
         const internalType = mimeType.replace('image/', '') as 'png' | 'gif';

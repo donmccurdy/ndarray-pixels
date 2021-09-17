@@ -66,7 +66,7 @@ fs.writeFileSync('./output.png', bufferOut);
 
 ### getPixels
 
-▸ **getPixels**(`data`: *string* \| Uint8Array, `mimeType?`: *string*): *Promise*<ndarray\>
+▸ **getPixels**(`data`, `mimeType?`): `Promise`<`NdArray`\>
 
 Decodes image data to an `ndarray`.
 
@@ -75,22 +75,26 @@ MIME type is optional when given a path or URL, and required when given a Uint8A
 Accepts `image/png` or `image/jpeg` in Node.js, and additional formats on browsers with
 the necessary support in Canvas 2D.
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`data` | *string* \| Uint8Array |  |
-`mimeType?` | *string* | `image/jpeg`, `image/png`, etc.   |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `data` | `string` \| `Uint8Array` |  |
+| `mimeType?` | `string` | `image/jpeg`, `image/png`, etc. |
 
-**Returns:** *Promise*<ndarray\>
+#### Returns
 
-Defined in: [index.ts:17](https://github.com/donmccurdy/ndarray-pixels/blob/091b259/src/index.ts#L17)
+`Promise`<`NdArray`\>
+
+#### Defined in
+
+[index.ts:17](https://github.com/donmccurdy/ndarray-pixels/blob/8e6fb62/src/index.ts#L17)
 
 ___
 
 ### savePixels
 
-▸ **savePixels**(`pixels`: ndarray, `mimeType`: *string*): *Promise*<Uint8Array\>
+▸ **savePixels**(`pixels`, `mimeType`): `Promise`<`Uint8Array`\>
 
 Encodes an `ndarray` as image data in the given format.
 
@@ -101,14 +105,18 @@ ndarray created by getPixels(), this isn't necessary.
 Accepts `image/png` or `image/jpeg` in Node.js, and additional formats on browsers with
 the necessary support in Canvas 2D.
 
-#### Parameters:
+#### Parameters
 
-Name | Type | Description |
-:------ | :------ | :------ |
-`pixels` | ndarray | ndarray of shape W x H x 4.   |
-`mimeType` | *string* | `image/jpeg`, `image/png`, etc.   |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `pixels` | `NdArray`<`Data`<`number`\>\> | ndarray of shape W x H x 4. |
+| `mimeType` | `string` | `image/jpeg`, `image/png`, etc. |
 
-**Returns:** *Promise*<Uint8Array\>
+#### Returns
 
-Defined in: [index.ts:48](https://github.com/donmccurdy/ndarray-pixels/blob/091b259/src/index.ts#L48)
+`Promise`<`Uint8Array`\>
+
+#### Defined in
+
+[index.ts:48](https://github.com/donmccurdy/ndarray-pixels/blob/8e6fb62/src/index.ts#L48)
 <!--- API END --->
