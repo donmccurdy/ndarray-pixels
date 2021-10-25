@@ -40,16 +40,16 @@
     "@typescript-eslint/parser": "4.33.0",
     "browserify": "17.0.0",
     "eslint": "7.32.0",
-    "microbundle": "0.14.0",
+    "microbundle": "0.14.1",
     "regenerator-runtime": "0.13.9",
     "replace-between": "0.0.8",
     "source-map-support": "0.5.20",
     "tap-spec": "5.0.0",
     "tape": "5.3.1",
     "tape-run": "9.0.0",
-    "typedoc": "0.22.5",
+    "typedoc": "0.22.7",
     "typedoc-plugin-markdown": "3.11.3",
-    "typescript": "4.4.3"
+    "typescript": "4.4.4"
   },
   "files": [
     "dist/",
