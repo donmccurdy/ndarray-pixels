@@ -33,7 +33,7 @@
   "devDependencies": {
     "@types/get-pixels": "3.3.1",
     "@types/ndarray-ops": "1.2.1",
-    "@types/node": "16.9.2",
+    "@types/node": "16.11.6",
     "@types/save-pixels": "2.3.2",
     "@types/tape": "4.13.2",
     "@typescript-eslint/eslint-plugin": "5.2.0",
