@@ -1091,10 +1091,10 @@
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-0.0.39.tgz#e177e699ee1b8c22d23174caaa7422644389509f"
   integrity sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==
 
-"@types/get-pixels@3.3.1":
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/@types/get-pixels/-/get-pixels-3.3.1.tgz#457713539932246fea1bea3d1fd3b37af5cf5f40"
-  integrity sha512-i2Wsjxfvce3/IPxBBSGqneWXQ14boqTVVeuG7SIhz3EYBPM/6XNobcwe1o8hpZ2K2DeJ/H9oSGZqlJcYabhVCQ==
+"@types/get-pixels@3.3.2":
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/@types/get-pixels/-/get-pixels-3.3.2.tgz#8baa43dc2b9379e4ac372b3c1e8ee86db762e8c8"
+  integrity sha512-wz3mMXvIzMS8G7Ryu2fygEOaVifR2Fl1uI33jwlbjWwaARIiOf4Q+zzDYmJuVxNG8C+A+vR5WLl1TePce+nTbQ==
   dependencies:
     "@types/ndarray" "*"
     "@types/node" "*"
@@ -1126,10 +1126,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.41.tgz#d0b939d94c1d7bd53d04824af45f1139b8c45615"
   integrity sha512-dueRKfaJL4RTtSa7bWeTK1M+VH+Gns73oCgzvYfHZywRCoPSd8EkXBL0mZ9unPTveBn+D9phZBaxuzpwjWkW0g==
 
-"@types/node@16.11.9":
-  version "16.11.9"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.9.tgz#879be3ad7af29f4c1a5c433421bf99fab7047185"
-  integrity sha512-MKmdASMf3LtPzwLyRrFjtFFZ48cMf8jmX5VRYrDQiJa8Ybu5VAmkqBWqKU8fdCwD8ysw4mQ9nrEHvzg6gunR7A==
+"@types/node@16.11.10":
+  version "16.11.10"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.10.tgz#2e3ad0a680d96367103d3e670d41c2fed3da61ae"
+  integrity sha512-3aRnHa1KlOEEhJ6+CvyHKK5vE9BcLGjtUpwvqYLRvYNQKMfabu3BwfJaA/SLW8dxe28LsNDjtHwePTuzn3gmOA==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -6780,10 +6780,10 @@ typedoc-plugin-markdown@3.11.7:
   dependencies:
     handlebars "^4.7.7"
 
-typedoc@0.22.9:
-  version "0.22.9"
-  resolved "https://registry.yarnpkg.com/typedoc/-/typedoc-0.22.9.tgz#7e3f4f72586bbef4c2382f0afcea8e0f9270b712"
-  integrity sha512-84PjudoXVcap6bwdZFbYIUWlgdz/iLV09ZHwrCzhtHWXaDQG6mlosJ8te6DSThuRkRvQjp46HO+qY/P7Gpm78g==
+typedoc@0.22.10:
+  version "0.22.10"
+  resolved "https://registry.yarnpkg.com/typedoc/-/typedoc-0.22.10.tgz#221e1a2b17bcb71817ef027dc4c4969d572e7620"
+  integrity sha512-hQYZ4WtoMZ61wDC6w10kxA42+jclWngdmztNZsDvIz7BMJg7F2xnT+uYsUa7OluyKossdFj9E9Ye4QOZKTy8SA==
   dependencies:
     glob "^7.2.0"
     lunr "^2.3.9"
