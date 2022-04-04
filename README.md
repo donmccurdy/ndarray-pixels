@@ -37,10 +37,17 @@ const bytesIn = await fetch('./input.png')
     .then((res) => res.arrayBuffer())
     .then((arrayBuffer) => new Uint8Array(arrayBuffer));
 
+// read
 const pixels = await getPixels(bytesIn, 'image/png'); // Uint8Array -> ndarray
 
-// ... modify ndarray ...
+// modify
+for (let i = 0; i < pixels.shape[0]; ++i) {
+  for (let j = 0; j < pixels.shape[1]; ++j) {
+    pixels.set(i, j, 255);
+  }
+}
 
+// write
 const bytesOut = await savePixels(pixels, 'image/png'); // ndarray -> Uint8Array
 ```
 
@@ -52,10 +59,18 @@ const fs = require('fs');
 const { getPixels, savePixels } = require('ndarray-pixels');
 
 const bufferIn = fs.readFileSync('./input.png');
+
+// read
 const pixels = await getPixels(bufferIn, 'image/png'); // Uint8Array -> ndarray
 
-// ... modify ndarray ...
+// modify
+for (let i = 0; i < pixels.shape[0]; ++i) {
+  for (let j = 0; j < pixels.shape[1]; ++j) {
+    pixels.set(i, j, 255);
+  }
+}
 
+// write
 const bufferOut = await savePixels(pixels, 'image/png'); // ndarray -> Uint8Array
 fs.writeFileSync('./output.png', bufferOut);
 ```
