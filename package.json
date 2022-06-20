@@ -33,13 +33,13 @@
   "devDependencies": {
     "@types/get-pixels": "3.3.2",
     "@types/ndarray-ops": "1.2.4",
-    "@types/node": "16.11.38",
+    "@types/node": "16.11.41",
     "@types/save-pixels": "2.3.2",
     "@types/tape": "4.13.2",
-    "@typescript-eslint/eslint-plugin": "5.27.0",
-    "@typescript-eslint/parser": "5.27.0",
+    "@typescript-eslint/eslint-plugin": "5.28.0",
+    "@typescript-eslint/parser": "5.28.0",
     "browserify": "17.0.0",
-    "eslint": "8.17.0",
+    "eslint": "8.18.0",
     "microbundle": "0.15.0",
     "regenerator-runtime": "0.13.9",
     "replace-between": "0.0.8",
@@ -49,7 +49,7 @@
     "tape-run": "9.0.0",
     "typedoc": "0.22.17",
     "typedoc-plugin-markdown": "3.12.1",
-    "typescript": "4.7.3"
+    "typescript": "4.7.4"
   },
   "files": [
     "dist/",
