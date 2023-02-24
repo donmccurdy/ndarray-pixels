@@ -23,7 +23,7 @@
   "author": "Don McCurdy <dm@donmccurdy.com>",
   "license": "MIT",
   "scripts": {
-    "dist": "yarn dist:node:modern && yarn dist:browser:modern",
+    "dist": "yarn dist:node && yarn dist:browser",
     "dist:node": "microbundle build --raw --target node --format modern,cjs src/index.ts --output dist/ndarray-pixels-node.js",
     "dist:browser": "microbundle build --raw --target web --format modern,cjs src/index.ts --output dist/ndarray-pixels-browser.js --alias get-pixels=./browser-get-pixels.ts,save-pixels=./browser-save-pixels.ts",
     "clean": "rm -rf dist/*",
