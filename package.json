@@ -8,13 +8,12 @@
   "main": "./dist/ndarray-pixels-node.cjs",
   "module": "./dist/ndarray-pixels-browser.modern.js",
   "exports": {
+    "types": "./dist/index.d.ts",
     "node": {
-      "types": "./dist/index.d.ts",
       "require": "./dist/ndarray-pixels-node.cjs",
       "default": "./dist/ndarray-pixels-node.modern.js"
     },
     "default": {
-      "types": "./dist/index.d.ts",
       "require": "./dist/ndarray-pixels-browser.cjs",
       "default": "./dist/ndarray-pixels-browser.modern.js"
     }
