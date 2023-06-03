@@ -46,7 +46,7 @@
     "@types/ndarray-ops": "1.2.4",
     "@types/node": "20.1.4",
     "@types/save-pixels": "2.3.2",
-    "@types/tape": "4.13.4",
+    "@types/tape": "5.6.0",
     "@typescript-eslint/eslint-plugin": "5.59.8",
     "@typescript-eslint/parser": "5.59.8",
     "browserify": "17.0.0",
