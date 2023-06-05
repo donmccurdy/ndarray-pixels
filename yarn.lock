@@ -1205,10 +1205,10 @@
   resolved "https://registry.yarnpkg.com/@types/semver/-/semver-7.3.12.tgz#920447fdd78d76b19de0438b7f60df3c4a80bf1c"
   integrity sha512-WwA1MW0++RfXmCr12xeYOOC5baSC9mSb0ZqCquFzKhcoF4TvHu5MKOuXsncgZcpVFhB1pXd5hZmM0ryAoCp12A==
 
-"@types/tape@4.13.4":
-  version "4.13.4"
-  resolved "https://registry.yarnpkg.com/@types/tape/-/tape-4.13.4.tgz#2fe220e9040c1721e5b1af6cd71e9e018d07cafb"
-  integrity sha512-0Mw8/FAMheD2MvyaFYDaAix7X5GfNjl/XI+zvqJdzC6N05BmHKz6Hwn+r7+8PEXDEKrC3V/irC9z7mrl5a130g==
+"@types/tape@5.6.0":
+  version "5.6.0"
+  resolved "https://registry.yarnpkg.com/@types/tape/-/tape-5.6.0.tgz#d8bc031c3cac16a3df9d7865843db78af1e1c56e"
+  integrity sha512-yt27qxGg45IVJ0i2PdbYopND9d4eaXwne/jpi0saYb7PHYu8ZYaQB+cADjj+YZkZZjCM4rnhMPYFGd6+M8sWKg==
   dependencies:
     "@types/node" "*"
     "@types/through" "*"
