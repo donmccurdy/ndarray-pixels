@@ -9,13 +9,11 @@ Convert [ndarray](https://www.npmjs.com/package/ndarray) ↔ image data, on Web 
 
 Designed to be used with [other ndarray-based packages](http://scijs.net/packages/).
 
-In Node.js, this package uses [get-pixels](https://www.npmjs.com/package/get-pixels) and [save-pixels](https://www.npmjs.com/package/save-pixels). While both packages could be used on the web, they require polyfills for Node.js builtins. Browserify handles that automatically, but more modern bundlers do not. Moreover, the polyfills increase package size significantly. To avoid these problems, web builds of `ndarray-pixels` reimplement the same functionality with the more portable Canvas API.
-
 ## Supported Formats
 
 | Platform | JPEG | PNG | Other                                                                                                 |
 |----------|------|-----|-------------------------------------------------------------------------------------------------------|
-| Node.js  | ✅    | ✅   | Based on [Sharp support](https://sharp.pixelplumbing.com/)                                            |
+| Node.js  | ✅    | ✅   | Based on [sharp support](https://sharp.pixelplumbing.com/)                                            |
 | Web      | ✅    | ✅   | Based on [browser support](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob) |
 
 ### Known Bugs
@@ -92,10 +90,10 @@ the necessary support in Canvas 2D.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `data` | `Uint8Array` |  |
-| `mimeType` | `string` | `image/jpeg`, `image/png`, etc. |
+| Name       | Type         | Description                     |
+|:-----------|:-------------|:--------------------------------|
+| `data`     | `Uint8Array` |                                 |
+| `mimeType` | `string`     | `image/jpeg`, `image/png`, etc. |
 
 #### Returns
 
@@ -122,10 +120,10 @@ the necessary support in Canvas 2D.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `pixels` | `NdArray`<`Uint8Array`\> | ndarray of shape W x H x 4. |
-| `mimeType` | `string` | `image/jpeg`, `image/png`, etc. |
+| Name       | Type                     | Description                     |
+|:-----------|:-------------------------|:--------------------------------|
+| `pixels`   | `NdArray`<`Uint8Array`\> | ndarray of shape W x H x 4.     |
+| `mimeType` | `string`                 | `image/jpeg`, `image/png`, etc. |
 
 #### Returns
 
