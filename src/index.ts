@@ -1,6 +1,6 @@
 import type { NdArray } from 'ndarray';
-import getPixelsInternal from './node-get-pixels';
-import savePixelsInternal from 'save-pixels';
+import { getPixelsInternal } from './node-get-pixels';
+import { savePixelsInternal } from './node-save-pixels';
 
 /**
  * Decodes image data to an `ndarray`.
@@ -14,7 +14,7 @@ import savePixelsInternal from 'save-pixels';
  * @param mimeType `image/jpeg`, `image/png`, etc.
  * @returns
  */
-async function getPixels(data: Uint8Array, mimeType: string): Promise<NdArray> {
+async function getPixels(data: Uint8Array, mimeType: string): Promise<NdArray<Uint8Array>> {
 	return getPixelsInternal(data, mimeType);
 }
 
@@ -32,32 +32,8 @@ async function getPixels(data: Uint8Array, mimeType: string): Promise<NdArray> {
  * @param mimeType `image/jpeg`, `image/png`, etc.
  * @returns
  */
-async function savePixels(pixels: NdArray, mimeType: string): Promise<Uint8Array> {
-	return new Promise((resolve, reject) => {
-		const chunks: Uint8Array[] = [];
-		const internalType = mimeType.replace('image/', '') as 'png' | 'gif';
-		savePixelsInternal(pixels, internalType)
-			.on('data', (d: Uint8Array) => chunks.push(d))
-			.on('end', () => resolve(concat(chunks)))
-			.on('error', (e: Error) => reject(e));
-	});
-}
-
-function concat(arrays: Uint8Array[]): Uint8Array {
-	let totalByteLength = 0;
-	for (const array of arrays) {
-		totalByteLength += array.byteLength;
-	}
-
-	const result = new Uint8Array(totalByteLength);
-
-	let byteOffset = 0;
-	for (const array of arrays) {
-		result.set(array, byteOffset);
-		byteOffset += array.byteLength;
-	}
-
-	return result;
+async function savePixels(pixels: NdArray<Uint8Array>, mimeType: string): Promise<Uint8Array> {
+	return savePixelsInternal(pixels, mimeType);
 }
 
 export { getPixels, savePixels };
