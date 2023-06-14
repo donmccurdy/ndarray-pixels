@@ -90,10 +90,10 @@ the necessary support in Canvas 2D.
 
 #### Parameters
 
-| Name       | Type         | Description                     |
-|:-----------|:-------------|:--------------------------------|
-| `data`     | `Uint8Array` |                                 |
-| `mimeType` | `string`     | `image/jpeg`, `image/png`, etc. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `data` | `Uint8Array` |  |
+| `mimeType` | `string` | `image/jpeg`, `image/png`, etc. |
 
 #### Returns
 
@@ -101,7 +101,7 @@ the necessary support in Canvas 2D.
 
 #### Defined in
 
-[index.ts:17](https://github.com/donmccurdy/ndarray-pixels/blob/06767b3/src/index.ts#L17)
+[index.ts:17](https://github.com/donmccurdy/ndarray-pixels/blob/92168e6/src/index.ts#L17)
 
 ___
 
@@ -120,10 +120,10 @@ the necessary support in Canvas 2D.
 
 #### Parameters
 
-| Name       | Type                     | Description                     |
-|:-----------|:-------------------------|:--------------------------------|
-| `pixels`   | `NdArray`<`Uint8Array`\> | ndarray of shape W x H x 4.     |
-| `mimeType` | `string`                 | `image/jpeg`, `image/png`, etc. |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `pixels` | `NdArray`<`Uint8Array`\> | ndarray of shape W x H x 4. |
+| `mimeType` | `string` | `image/jpeg`, `image/png`, etc. |
 
 #### Returns
 
@@ -131,5 +131,5 @@ the necessary support in Canvas 2D.
 
 #### Defined in
 
-[index.ts:35](https://github.com/donmccurdy/ndarray-pixels/blob/06767b3/src/index.ts#L35)
+[index.ts:35](https://github.com/donmccurdy/ndarray-pixels/blob/92168e6/src/index.ts#L35)
 <!--- API END --->
