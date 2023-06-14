@@ -13,10 +13,10 @@ In Node.js, this package uses [get-pixels](https://www.npmjs.com/package/get-pix
 
 ## Supported Formats
 
-| Platform | JPEG | PNG | Other |
-|----------|------|-----|-------|
-| Node.js  | ✅   | ✅ | ❌      |
-| Web      | ✅   | ✅ | Based on [browser support](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob) |
+| Platform | JPEG | PNG | Other                                                                                                 |
+|----------|------|-----|-------------------------------------------------------------------------------------------------------|
+| Node.js  | ✅    | ✅   | Based on [Sharp support](https://sharp.pixelplumbing.com/)                                            |
+| Web      | ✅    | ✅   | Based on [browser support](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob) |
 
 ### Known Bugs
 
@@ -81,7 +81,7 @@ fs.writeFileSync('./output.png', bufferOut);
 
 ### getPixels
 
-▸ **getPixels**(`data`, `mimeType?`): `Promise`<`NdArray`\>
+▸ **getPixels**(`data`, `mimeType`): `Promise`<`NdArray`<`Uint8Array`\>\>
 
 Decodes image data to an `ndarray`.
 
@@ -94,16 +94,16 @@ the necessary support in Canvas 2D.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `data` | `string` \| `Uint8Array` |  |
-| `mimeType?` | `string` | `image/jpeg`, `image/png`, etc. |
+| `data` | `Uint8Array` |  |
+| `mimeType` | `string` | `image/jpeg`, `image/png`, etc. |
 
 #### Returns
 
-`Promise`<`NdArray`\>
+`Promise`<`NdArray`<`Uint8Array`\>\>
 
 #### Defined in
 
-[index.ts:17](https://github.com/donmccurdy/ndarray-pixels/blob/6f5efcc/src/index.ts#L17)
+[index.ts:17](https://github.com/donmccurdy/ndarray-pixels/blob/06767b3/src/index.ts#L17)
 
 ___
 
@@ -124,7 +124,7 @@ the necessary support in Canvas 2D.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `pixels` | `NdArray`<`Data`<`number`\>\> | ndarray of shape W x H x 4. |
+| `pixels` | `NdArray`<`Uint8Array`\> | ndarray of shape W x H x 4. |
 | `mimeType` | `string` | `image/jpeg`, `image/png`, etc. |
 
 #### Returns
@@ -133,5 +133,5 @@ the necessary support in Canvas 2D.
 
 #### Defined in
 
-[index.ts:48](https://github.com/donmccurdy/ndarray-pixels/blob/6f5efcc/src/index.ts#L48)
+[index.ts:35](https://github.com/donmccurdy/ndarray-pixels/blob/06767b3/src/index.ts#L35)
 <!--- API END --->
