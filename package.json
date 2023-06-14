@@ -1,72 +1,70 @@
 {
-  "name": "ndarray-pixels",
-  "version": "2.0.1",
-  "description": "ndarray-pixels",
-  "type": "module",
-  "sideEffects": false,
-  "types": "./dist/index.d.ts",
-  "main": "./dist/ndarray-pixels-node.cjs",
-  "module": "./dist/ndarray-pixels-browser.modern.js",
-  "exports": {
-    "types": "./dist/index.d.ts",
-    "node": {
-      "require": "./dist/ndarray-pixels-node.cjs",
-      "default": "./dist/ndarray-pixels-node.modern.js"
-    },
-    "default": {
-      "require": "./dist/ndarray-pixels-browser.cjs",
-      "default": "./dist/ndarray-pixels-browser.modern.js"
-    }
-  },
-  "repository": "github:donmccurdy/ndarray-pixels",
-  "author": "Don McCurdy <dm@donmccurdy.com>",
-  "license": "MIT",
-  "scripts": {
-    "dist": "yarn dist:node && yarn dist:browser",
-    "dist:node": "microbundle build --raw --target node --format modern,cjs src/index.ts --output dist/ndarray-pixels-node.js",
-    "dist:browser": "microbundle build --raw --target web --format modern,cjs src/index.ts --output dist/ndarray-pixels-browser.js --alias get-pixels=./browser-get-pixels.ts,save-pixels=./browser-save-pixels.ts",
-    "clean": "rm -rf dist/*",
-    "test": "yarn test:node && yarn test:browser",
-    "test:node": "tape test/node.test.cjs | tap-spec",
-    "test:browser": "browserify test/browser.test.cjs | tape-run | tap-spec",
-    "docs": "typedoc src/index.ts --plugin typedoc-plugin-markdown --out ./docs --hideBreadcrumbs && cat docs/modules.md | tail -n +12 | replace-between --target README.md --token API && rm -rf docs",
-    "preversion": "yarn dist && yarn test",
-    "version": "yarn dist && yarn docs && git add -u",
-    "postversion": "git push && git push --tags && npm publish"
-  },
-  "dependencies": {
-    "@types/ndarray": "^1.0.11",
-    "get-pixels": "^3.3.3",
-    "ndarray": "^1.0.19",
-    "ndarray-ops": "^1.2.2",
-    "save-pixels": "^2.3.6"
-  },
-  "devDependencies": {
-    "@types/get-pixels": "3.3.2",
-    "@types/ndarray-ops": "1.2.4",
-    "@types/node": "20.1.4",
-    "@types/save-pixels": "2.3.2",
-    "@types/tape": "5.6.0",
-    "@typescript-eslint/eslint-plugin": "5.59.8",
-    "@typescript-eslint/parser": "5.59.8",
-    "browserify": "17.0.0",
-    "eslint": "8.42.0",
-    "microbundle": "0.15.1",
-    "regenerator-runtime": "0.13.11",
-    "replace-between": "0.0.8",
-    "source-map-support": "0.5.21",
-    "tap-spec": "5.0.0",
-    "tape": "5.6.3",
-    "tape-run": "10.0.0",
-    "typedoc": "0.24.7",
-    "typedoc-plugin-markdown": "3.15.3",
-    "typescript": "5.1.3"
-  },
-  "files": [
-    "dist/",
-    "src/",
-    "README.md",
-    "LICENSE",
-    "package.json"
-  ]
+	"name": "ndarray-pixels",
+	"version": "2.0.1",
+	"description": "ndarray-pixels",
+	"type": "module",
+	"sideEffects": false,
+	"types": "./dist/index.d.ts",
+	"main": "./dist/ndarray-pixels-node.cjs",
+	"module": "./dist/ndarray-pixels-browser.modern.js",
+	"exports": {
+		"types": "./dist/index.d.ts",
+		"node": {
+			"require": "./dist/ndarray-pixels-node.cjs",
+			"default": "./dist/ndarray-pixels-node.modern.js"
+		},
+		"default": {
+			"require": "./dist/ndarray-pixels-browser.cjs",
+			"default": "./dist/ndarray-pixels-browser.modern.js"
+		}
+	},
+	"repository": "github:donmccurdy/ndarray-pixels",
+	"author": "Don McCurdy <dm@donmccurdy.com>",
+	"license": "MIT",
+	"scripts": {
+		"dist": "yarn dist:node && yarn dist:browser",
+		"dist:node": "microbundle build --raw --no-compress --target node --format modern,cjs src/index.ts --output dist/ndarray-pixels-node.js",
+		"dist:browser": "microbundle build --raw --no-compress --target web --format modern,cjs src/index.ts --output dist/ndarray-pixels-browser.js --alias ./node-get-pixels=./browser-get-pixels.ts,./node-save-pixels=./browser-save-pixels.ts",
+		"clean": "rm -rf dist/*",
+		"test": "yarn test:node && yarn test:browser",
+		"test:node": "tape test/node.test.cjs | tap-spec",
+		"test:browser": "browserify test/browser.test.cjs | tape-run | tap-spec",
+		"docs": "typedoc src/index.ts --plugin typedoc-plugin-markdown --out ./docs --hideBreadcrumbs && cat docs/modules.md | tail -n +12 | replace-between --target README.md --token API && rm -rf docs",
+		"preversion": "yarn dist && yarn test",
+		"version": "yarn dist && yarn docs && git add -u",
+		"postversion": "git push && git push --tags && npm publish"
+	},
+	"dependencies": {
+		"@types/ndarray": "^1.0.11",
+		"ndarray": "^1.0.19",
+		"ndarray-ops": "^1.2.2",
+		"sharp": "^0.32.1"
+	},
+	"devDependencies": {
+		"@types/ndarray-ops": "1.2.4",
+		"@types/node": "20.1.4",
+		"@types/sharp": "^0.32.0",
+		"@types/tape": "4.13.4",
+		"@typescript-eslint/eslint-plugin": "5.59.6",
+		"@typescript-eslint/parser": "5.59.6",
+		"browserify": "17.0.0",
+		"eslint": "8.40.0",
+		"microbundle": "0.15.1",
+		"regenerator-runtime": "0.13.11",
+		"replace-between": "0.0.8",
+		"source-map-support": "0.5.21",
+		"tap-spec": "5.0.0",
+		"tape": "5.6.3",
+		"tape-run": "10.0.0",
+		"typedoc": "0.24.7",
+		"typedoc-plugin-markdown": "3.15.3",
+		"typescript": "5.0.4"
+	},
+	"files": [
+		"dist/",
+		"src/",
+		"README.md",
+		"LICENSE",
+		"package.json"
+	]
 }
