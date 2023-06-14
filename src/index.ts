@@ -32,7 +32,10 @@ async function getPixels(data: Uint8Array, mimeType: string): Promise<NdArray<Ui
  * @param mimeType `image/jpeg`, `image/png`, etc.
  * @returns
  */
-async function savePixels(pixels: NdArray<Uint8Array>, mimeType: string): Promise<Uint8Array> {
+async function savePixels(
+	pixels: NdArray<Uint8Array | Uint8ClampedArray>,
+	mimeType: string
+): Promise<Uint8Array> {
 	return savePixelsInternal(pixels, mimeType);
 }
 
