@@ -2,7 +2,7 @@
 
 [![Latest NPM release](https://img.shields.io/npm/v/ndarray-pixels.svg)](https://www.npmjs.com/package/ndarray-pixels)
 [![License](https://img.shields.io/badge/license-MIT-007ec6.svg)](https://github.com/donmccurdy/ndarray-pixels/blob/main/LICENSE)
-[![Minzipped size](https://badgen.net/bundlephobia/minzip/ndarray-pixels)](https://bundlephobia.com/result?p=ndarray-pixels)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/ndarray-pixels)](https://bundlephobia.com/package/ndarray-pixels)
 [![CI](https://github.com/donmccurdy/ndarray-pixels/workflows/CI/badge.svg?branch=main&event=push)](https://github.com/donmccurdy/ndarray-pixels/actions?query=workflow%3ACI)
 
 Convert [ndarray](https://www.npmjs.com/package/ndarray) ↔ image data, on Web and Node.js.
