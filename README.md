@@ -41,7 +41,9 @@ const pixels = await getPixels(bytesIn, 'image/png'); // Uint8Array -> ndarray
 // modify
 for (let i = 0; i < pixels.shape[0]; ++i) {
   for (let j = 0; j < pixels.shape[1]; ++j) {
-    pixels.set(i, j, 255);
+    for (let k = 0; k < pixels.shape[2]; ++k) {
+      pixels.set(i, j, k, 255);
+    }
   }
 }
 
@@ -64,7 +66,9 @@ const pixels = await getPixels(bufferIn, 'image/png'); // Uint8Array -> ndarray
 // modify
 for (let i = 0; i < pixels.shape[0]; ++i) {
   for (let j = 0; j < pixels.shape[1]; ++j) {
-    pixels.set(i, j, 255);
+    for (let k = 0; k < pixels.shape[2]; ++k) {
+      pixels.set(i, j, k, 255);
+    }
   }
 }
 
