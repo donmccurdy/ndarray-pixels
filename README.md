@@ -39,11 +39,13 @@ const bytesIn = await fetch('./input.png')
 const pixels = await getPixels(bytesIn, 'image/png'); // Uint8Array -> ndarray
 
 // modify
-for (let i = 0; i < pixels.shape[0]; ++i) {
-  for (let j = 0; j < pixels.shape[1]; ++j) {
-    for (let k = 0; k < pixels.shape[2]; ++k) {
-      pixels.set(i, j, k, 255);
-    }
+const [width, height] = pixels.shape;
+for (let x = 0; x < width; ++x) {
+  for (let y = 0; y < height; ++y) {
+    pixels.set(x, y, 0, 255); // R
+    pixels.set(x, y, 1, 0.0); // G
+    pixels.set(x, y, 2, 0.0); // B
+    pixels.set(x, y, 3, 255); // A
   }
 }
 
@@ -64,11 +66,13 @@ const bufferIn = fs.readFileSync('./input.png');
 const pixels = await getPixels(bufferIn, 'image/png'); // Uint8Array -> ndarray
 
 // modify
-for (let i = 0; i < pixels.shape[0]; ++i) {
-  for (let j = 0; j < pixels.shape[1]; ++j) {
-    for (let k = 0; k < pixels.shape[2]; ++k) {
-      pixels.set(i, j, k, 255);
-    }
+const [width, height] = pixels.shape;
+for (let x = 0; x < width; ++x) {
+  for (let y = 0; y < height; ++y) {
+    pixels.set(x, y, 0, 255); // R
+    pixels.set(x, y, 1, 0.0); // G
+    pixels.set(x, y, 2, 0.0); // B
+    pixels.set(x, y, 3, 255); // A
   }
 }
 
