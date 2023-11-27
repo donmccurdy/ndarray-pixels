@@ -42,10 +42,10 @@
 	},
 	"devDependencies": {
 		"@types/ndarray-ops": "1.2.7",
-		"@types/node": "20.9.2",
+		"@types/node": "20.10.0",
 		"@types/tape": "5.6.4",
-		"@typescript-eslint/eslint-plugin": "6.11.0",
-		"@typescript-eslint/parser": "6.11.0",
+		"@typescript-eslint/eslint-plugin": "6.12.0",
+		"@typescript-eslint/parser": "6.12.0",
 		"browserify": "17.0.0",
 		"eslint": "8.54.0",
 		"microbundle": "0.15.1",
@@ -55,9 +55,9 @@
 		"tap-spec": "5.0.0",
 		"tape": "5.7.2",
 		"tape-run": "11.0.0",
-		"typedoc": "0.25.3",
+		"typedoc": "0.25.4",
 		"typedoc-plugin-markdown": "3.17.1",
-		"typescript": "5.2.2"
+		"typescript": "5.3.2"
 	},
 	"files": [
 		"dist/",
