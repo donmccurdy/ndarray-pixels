@@ -87,7 +87,7 @@ fs.writeFileSync('./output.png', bufferOut);
 
 ### getPixels
 
-▸ **getPixels**(`data`, `mimeType`): `Promise`<`NdArray`<`Uint8Array`\>\>
+▸ **getPixels**(`data`, `mimeType`): `Promise`\<`NdArray`\<`Uint8Array`\>\>
 
 Decodes image data to an `ndarray`.
 
@@ -105,17 +105,17 @@ the necessary support in Canvas 2D.
 
 #### Returns
 
-`Promise`<`NdArray`<`Uint8Array`\>\>
+`Promise`\<`NdArray`\<`Uint8Array`\>\>
 
 #### Defined in
 
-[index.ts:17](https://github.com/donmccurdy/ndarray-pixels/blob/ddd43a4/src/index.ts#L17)
+[index.ts:17](https://github.com/donmccurdy/ndarray-pixels/blob/d240a38/src/index.ts#L17)
 
 ___
 
 ### savePixels
 
-▸ **savePixels**(`pixels`, `mimeType`): `Promise`<`Uint8Array`\>
+▸ **savePixels**(`pixels`, `mimeType`): `Promise`\<`Uint8Array`\>
 
 Encodes an `ndarray` as image data in the given format.
 
@@ -130,14 +130,14 @@ the necessary support in Canvas 2D.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `pixels` | `NdArray`<`Uint8Array` \| `Uint8ClampedArray`\> | ndarray of shape W x H x 4. |
+| `pixels` | `NdArray`\<`Uint8Array` \| `Uint8ClampedArray`\> | ndarray of shape W x H x 4. |
 | `mimeType` | `string` | `image/jpeg`, `image/png`, etc. |
 
 #### Returns
 
-`Promise`<`Uint8Array`\>
+`Promise`\<`Uint8Array`\>
 
 #### Defined in
 
-[index.ts:35](https://github.com/donmccurdy/ndarray-pixels/blob/ddd43a4/src/index.ts#L35)
+[index.ts:35](https://github.com/donmccurdy/ndarray-pixels/blob/d240a38/src/index.ts#L35)
 <!--- API END --->
