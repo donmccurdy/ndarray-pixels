@@ -42,7 +42,7 @@
 	},
 	"devDependencies": {
 		"@types/ndarray-ops": "1.2.7",
-		"@types/node": "20.11.17",
+		"@types/node": "20.11.19",
 		"@types/tape": "5.6.4",
 		"@typescript-eslint/eslint-plugin": "6.21.0",
 		"@typescript-eslint/parser": "6.21.0",
@@ -53,7 +53,7 @@
 		"replace-between": "0.0.8",
 		"source-map-support": "0.5.21",
 		"tap-spec": "5.0.0",
-		"tape": "5.7.4",
+		"tape": "5.7.5",
 		"tape-run": "11.0.0",
 		"typedoc": "0.25.8",
 		"typedoc-plugin-markdown": "3.17.1",
