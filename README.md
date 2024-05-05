@@ -109,7 +109,7 @@ the necessary support in Canvas 2D.
 
 #### Defined in
 
-[index.ts:17](https://github.com/donmccurdy/ndarray-pixels/blob/d240a38/src/index.ts#L17)
+[index.ts:17](https://github.com/donmccurdy/ndarray-pixels/blob/cff6320c9bbc3295943525c25cecd4acdcc9e63b/src/index.ts#L17)
 
 ___
 
@@ -139,5 +139,5 @@ the necessary support in Canvas 2D.
 
 #### Defined in
 
-[index.ts:35](https://github.com/donmccurdy/ndarray-pixels/blob/d240a38/src/index.ts#L35)
+[index.ts:35](https://github.com/donmccurdy/ndarray-pixels/blob/cff6320c9bbc3295943525c25cecd4acdcc9e63b/src/index.ts#L35)
 <!--- API END --->
