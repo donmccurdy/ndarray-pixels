@@ -29,6 +29,7 @@
 		"test": "yarn test:node && yarn test:browser",
 		"test:node": "tape test/node.test.cjs | tap-spec",
 		"test:browser": "browserify test/browser.test.cjs | tape-run | tap-spec",
+		"lint": "eslint \"{src,test}/**/*.ts\"",
 		"docs": "typedoc src/index.ts --plugin typedoc-plugin-markdown --out ./docs --hideBreadcrumbs && cat docs/modules.md | tail -n +12 | replace-between --target README.md --token API && rm -rf docs",
 		"preversion": "yarn dist && yarn test",
 		"version": "yarn dist && yarn docs && git add -u",
@@ -41,13 +42,12 @@
 		"sharp": "^0.32.6"
 	},
 	"devDependencies": {
+		"@eslint/js": "^9.2.0",
 		"@types/ndarray-ops": "1.2.7",
 		"@types/node": "20.12.7",
 		"@types/tape": "5.6.4",
-		"@typescript-eslint/eslint-plugin": "7.7.1",
-		"@typescript-eslint/parser": "7.7.1",
 		"browserify": "17.0.0",
-		"eslint": "9.1.1",
+		"eslint": "8.57.0",
 		"microbundle": "0.15.1",
 		"regenerator-runtime": "0.14.1",
 		"replace-between": "0.0.8",
@@ -57,7 +57,8 @@
 		"tape-run": "11.0.0",
 		"typedoc": "0.25.13",
 		"typedoc-plugin-markdown": "3.17.1",
-		"typescript": "5.4.5"
+		"typescript": "5.4.5",
+		"typescript-eslint": "^7.8.0"
 	},
 	"files": [
 		"dist/",
