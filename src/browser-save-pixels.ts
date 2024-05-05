@@ -19,10 +19,8 @@ export async function savePixelsInternal(
 	mimeType: string,
 	options: EncoderOptions = {}
 ): Promise<Uint8Array> {
-	// Create HTMLCanvasElement and write pixel data.
-	const canvas = document.createElement('canvas');
-	canvas.width = pixels.shape[0];
-	canvas.height = pixels.shape[1];
+	// Create OffscreenCanvas and write pixel data.
+	const canvas = new OffscreenCanvas(pixels.shape[0], pixels.shape[1])
 
 	const context = canvas.getContext('2d')!;
 	const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
@@ -41,23 +39,16 @@ export async function savePixelsInternal(
 	}
 }
 
-/** Creates readable stream from given HTMLCanvasElement and options. */
-function streamCanvas(
-	canvas: HTMLCanvasElement,
+/** Creates readable stream from given OffscreenCanvas and options. */
+async function streamCanvas(
+	canvas: OffscreenCanvas,
 	mimeType: string,
 	quality?: number
 ): Promise<Uint8Array> {
-	return new Promise<Uint8Array>((resolve, reject) => {
-		canvas.toBlob(
-			async (blob) => {
-				if (blob) {
-					resolve(new Uint8Array(await blob.arrayBuffer()));
-				} else {
-					reject(new Error('[ndarray-pixels] Failed to canvas.toBlob().'));
-				}
-			},
-			mimeType,
+	const blob = await canvas.convertToBlob({
+			type: mimeType,
 			quality
-		);
-	});
+		})
+	const ab = await blob.arrayBuffer()
+	return new Uint8Array(ab)
 }
