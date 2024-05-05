@@ -7,23 +7,24 @@ on:
         branches: [main]
 
 jobs:
-  build:
+    build:
+        runs-on: macos-latest
 
-    runs-on: macos-latest
-
-    strategy:
-      matrix:
-        node-version: [18.x]
-
-    steps:
-    - uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: yarn install
-    - run: yarn dist
-    - run: yarn test:node
-    - run: yarn test:browser
-      env:
-        CI: true
+        strategy:
+            matrix:
+                node-version: [v18, v20]
+        env:
+            CI: true
+            LINT: ${{ matrix.node-version == 'v18' && true || false }}
+        steps:
+            - uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+            - run: yarn install
+            - run: yarn dist
+            - run: yarn test:node
+            - run: yarn test:browser
+            - run: yarn lint
+              if: ${{ env.LINT == 'true' }}
