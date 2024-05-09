@@ -36,15 +36,15 @@
 		"postversion": "git push && git push --tags && npm publish"
 	},
 	"dependencies": {
-		"@types/ndarray": "^1.0.11",
+		"@types/ndarray": "^1.0.14",
 		"ndarray": "^1.0.19",
 		"ndarray-ops": "^1.2.2",
-		"sharp": "^0.32.6"
+		"sharp": "^0.33.3"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.2.0",
 		"@types/ndarray-ops": "1.2.7",
-		"@types/node": "20.12.7",
+		"@types/node": "20.12.11",
 		"@types/tape": "5.6.4",
 		"browserify": "17.0.0",
 		"eslint": "8.57.0",
@@ -56,7 +56,7 @@
 		"tape": "5.7.5",
 		"tape-run": "11.0.0",
 		"typedoc": "0.25.13",
-		"typedoc-plugin-markdown": "3.17.1",
+		"typedoc-plugin-markdown": "4.0.1",
 		"typescript": "5.4.5",
 		"typescript-eslint": "^7.8.0"
 	},
@@ -66,5 +66,6 @@
 		"README.md",
 		"LICENSE",
 		"package.json"
-	]
+	],
+	"packageManager": "yarn@4.2.2"
 }
