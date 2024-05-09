@@ -1,10 +1,10 @@
 import type { NdArray } from 'ndarray';
 import { putPixelData } from './common';
+import type { ImageEncodeOptions } from './common';
 
 export async function savePixelsInternal(
 	pixels: NdArray<Uint8Array | Uint8ClampedArray>,
-	mimeType: string,
-	quality?: number
+	options: ImageEncodeOptions
 ): Promise<Uint8Array> {
 	// Create OffscreenCanvas and write pixel data.
 	const canvas = new OffscreenCanvas(pixels.shape[0], pixels.shape[1]);
@@ -15,19 +15,15 @@ export async function savePixelsInternal(
 	putPixelData(pixels, imageData.data);
 	context.putImageData(imageData, 0, 0);
 
-	return streamCanvas(canvas, mimeType, quality);
+	return streamCanvas(canvas, options);
 }
 
 /** Creates readable stream from given OffscreenCanvas and options. */
 async function streamCanvas(
 	canvas: OffscreenCanvas,
-	mimeType: string,
-	quality?: number
+	options: ImageEncodeOptions
 ): Promise<Uint8Array> {
-	const blob = await canvas.convertToBlob({
-		type: mimeType,
-		quality,
-	});
+	const blob = await canvas.convertToBlob(options);
 	const ab = await blob.arrayBuffer();
 	return new Uint8Array(ab);
 }
