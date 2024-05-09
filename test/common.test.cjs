@@ -36,7 +36,7 @@ module.exports = function (platform, getPixels, savePixels) {
 			}
 		}
 
-		const data = await savePixels(pixelsIn, 'image/webp', 1);
+		const data = await savePixels(pixelsIn, { type: 'image/webp', quality: 1 });
 		const pixelsOut = await getPixels(Buffer.from(data), 'image/webp');
 
 		t.deepEqual(pixelsIn.shape, pixelsOut.shape, 'ndarray.shape');
@@ -59,7 +59,7 @@ module.exports = function (platform, getPixels, savePixels) {
 			}
 		}
 
-		const data = await savePixels(pixelsIn, 'image/webp', 0.9);
+		const data = await savePixels(pixelsIn, { type: 'image/webp', quality: 0.9 });
 		const pixelsOut = await getPixels(Buffer.from(data), 'image/webp');
 
 		t.deepEqual(pixelsIn.shape, pixelsOut.shape, 'ndarray.shape');
