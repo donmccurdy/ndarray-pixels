@@ -29,14 +29,28 @@ async function getPixels(data: Uint8Array, mimeType: string): Promise<NdArray<Ui
  * the necessary support in Canvas 2D.
  *
  * @param pixels ndarray of shape W x H x 4.
- * @param mimeType `image/jpeg`, `image/png`, etc.
+ * @param typeOrOptions object with encoding options or just the type
+ * @param typeOrOptions.type target format (`image/jpeg`, `image/png`, `image/webp`, etc.)
+ * @param typeOrOptions.quality quality as a number from 0 to 1, inclusive
  * @returns
  */
 async function savePixels(
 	pixels: NdArray<Uint8Array | Uint8ClampedArray>,
-	mimeType: string
+	typeOrOptions: string | { type?: string; quality?: number }
 ): Promise<Uint8Array> {
-	return savePixelsInternal(pixels, mimeType);
+	let options;
+	if (typeof typeOrOptions === 'string') {
+		options = {
+			type: typeOrOptions,
+			quality: undefined,
+		};
+	} else {
+		options = {
+			type: typeOrOptions.type,
+			quality: typeOrOptions.quality,
+		};
+	}
+	return savePixelsInternal(pixels, options);
 }
 
 export { getPixels, savePixels };

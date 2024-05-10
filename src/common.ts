@@ -1,6 +1,11 @@
 import ndarray, { NdArray } from 'ndarray';
 import ops from 'ndarray-ops';
 
+export interface ImageEncodeOptions {
+	type?: string;
+	quality?: number;
+}
+
 export function putPixelData(
 	array: NdArray<Uint8Array | Uint8ClampedArray>,
 	data: Uint8Array | Uint8ClampedArray,
