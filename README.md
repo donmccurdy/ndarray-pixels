@@ -85,9 +85,10 @@ fs.writeFileSync('./output.png', bufferOut);
 
 <!--- API BEGIN --->
 
-### getPixels
 
-▸ **getPixels**(`data`, `mimeType`): `Promise`\<`NdArray`\<`Uint8Array`\>\>
+### Function: getPixels()
+
+> **getPixels**(`data`, `mimeType`): `Promise`\<`NdArray`\<`Uint8Array`\>\>
 
 Decodes image data to an `ndarray`.
 
@@ -98,24 +99,22 @@ the necessary support in Canvas 2D.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `data` | `Uint8Array` |  |
-| `mimeType` | `string` | `image/jpeg`, `image/png`, etc. |
+• **data**: `Uint8Array`
+
+• **mimeType**: `string`
+
+`image/jpeg`, `image/png`, etc.
 
 #### Returns
 
 `Promise`\<`NdArray`\<`Uint8Array`\>\>
 
-#### Defined in
+#### Source
 
-[index.ts:17](https://github.com/donmccurdy/ndarray-pixels/blob/cff6320c9bbc3295943525c25cecd4acdcc9e63b/src/index.ts#L17)
+[index.ts:17](https://github.com/donmccurdy/ndarray-pixels/blob/3c9c8c93e5f3c650f8c38271dbaf7f1dc6c68a59/src/index.ts#L17)
+### Function: savePixels()
 
-___
-
-### savePixels
-
-▸ **savePixels**(`pixels`, `mimeType`): `Promise`\<`Uint8Array`\>
+> **savePixels**(`pixels`, `typeOrOptions`): `Promise`\<`Uint8Array`\>
 
 Encodes an `ndarray` as image data in the given format.
 
@@ -128,16 +127,19 @@ the necessary support in Canvas 2D.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `pixels` | `NdArray`\<`Uint8Array` \| `Uint8ClampedArray`\> | ndarray of shape W x H x 4. |
-| `mimeType` | `string` | `image/jpeg`, `image/png`, etc. |
+• **pixels**: `NdArray`\<`Uint8Array` \| `Uint8ClampedArray`\>
+
+ndarray of shape W x H x 4.
+
+• **typeOrOptions**: `string` \| `object`
+
+object with encoding options or just the type
 
 #### Returns
 
 `Promise`\<`Uint8Array`\>
 
-#### Defined in
+#### Source
 
-[index.ts:35](https://github.com/donmccurdy/ndarray-pixels/blob/cff6320c9bbc3295943525c25cecd4acdcc9e63b/src/index.ts#L35)
+[index.ts:37](https://github.com/donmccurdy/ndarray-pixels/blob/3c9c8c93e5f3c650f8c38271dbaf7f1dc6c68a59/src/index.ts#L37)
 <!--- API END --->
