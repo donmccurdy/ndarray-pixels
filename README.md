@@ -111,7 +111,7 @@ the necessary support in Canvas 2D.
 
 #### Source
 
-[index.ts:17](https://github.com/donmccurdy/ndarray-pixels/blob/3c9c8c93e5f3c650f8c38271dbaf7f1dc6c68a59/src/index.ts#L17)
+[index.ts:17](https://github.com/donmccurdy/ndarray-pixels/blob/c5bf2c6211099ea4610a51aa2cd7a7ed7c7c2df5/src/index.ts#L17)
 ### Function: savePixels()
 
 > **savePixels**(`pixels`, `typeOrOptions`): `Promise`\<`Uint8Array`\>
@@ -141,5 +141,5 @@ object with encoding options or just the type
 
 #### Source
 
-[index.ts:37](https://github.com/donmccurdy/ndarray-pixels/blob/3c9c8c93e5f3c650f8c38271dbaf7f1dc6c68a59/src/index.ts#L37)
+[index.ts:37](https://github.com/donmccurdy/ndarray-pixels/blob/c5bf2c6211099ea4610a51aa2cd7a7ed7c7c2df5/src/index.ts#L37)
 <!--- API END --->
