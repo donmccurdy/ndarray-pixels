@@ -55,8 +55,8 @@
 		"tap-spec": "5.0.0",
 		"tape": "5.8.1",
 		"tape-run": "11.0.0",
-		"typedoc": "0.26.3",
-		"typedoc-plugin-markdown": "4.1.2",
+		"typedoc": "0.26.4",
+		"typedoc-plugin-markdown": "4.2.1",
 		"typescript": "5.5.3",
 		"typescript-eslint": "^7.9.0"
 	},
