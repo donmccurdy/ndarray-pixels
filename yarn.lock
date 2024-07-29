@@ -2108,12 +2108,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:20.14.11":
-  version: 20.14.11
-  resolution: "@types/node@npm:20.14.11"
+"@types/node@npm:20.14.13":
+  version: 20.14.13
+  resolution: "@types/node@npm:20.14.13"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 10c0/5306becc0ff41d81b1e31524bd376e958d0741d1ce892dffd586b9ae0cb6553c62b0d62abd16da8bea6b9a2c17572d360450535d7c073794b0cef9cb4e39691e
+  checksum: 10c0/10bb3ece675308742301c652ab8c6cb88b1ebddebed22316103c58f94fe7eff131edd5f679e487c19077fadb6b5e6b1ad9a60a2cee2869aa1f20452b9761d570
   languageName: node
   linkType: hard
 
@@ -6944,7 +6944,7 @@ __metadata:
     "@eslint/js": "npm:^9.2.0"
     "@types/ndarray": "npm:^1.0.14"
     "@types/ndarray-ops": "npm:1.2.7"
-    "@types/node": "npm:20.14.11"
+    "@types/node": "npm:20.14.13"
     "@types/tape": "npm:5.6.4"
     browserify: "npm:17.0.0"
     eslint: "npm:8.57.0"
@@ -6959,8 +6959,8 @@ __metadata:
     tape: "npm:5.8.1"
     tape-run: "npm:11.0.0"
     typedoc: "npm:0.26.5"
-    typedoc-plugin-markdown: "npm:4.2.1"
-    typescript: "npm:5.5.3"
+    typedoc-plugin-markdown: "npm:4.2.3"
+    typescript: "npm:5.5.4"
     typescript-eslint: "npm:^7.9.0"
   languageName: unknown
   linkType: soft
@@ -10062,12 +10062,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc-plugin-markdown@npm:4.2.1":
-  version: 4.2.1
-  resolution: "typedoc-plugin-markdown@npm:4.2.1"
+"typedoc-plugin-markdown@npm:4.2.3":
+  version: 4.2.3
+  resolution: "typedoc-plugin-markdown@npm:4.2.3"
   peerDependencies:
     typedoc: 0.26.x
-  checksum: 10c0/b56e6c8853e866a215a6dab81a7ed471777f00822f8e9de35935aa67b55a6459a5ab05391e7407a1aa4a76c5ada0eb8e1362589eda6c6eb203dbc3e4166d1e55
+  checksum: 10c0/09b577bb631b68ba39c5302a18a5993967f8c8f68041dc15379e5c4c9b06aad45481bb5cd66dab1d12fd4bbcdf9fa6adbf0415c83f540953ac9d268e8d81bffb
   languageName: node
   linkType: hard
 
@@ -10104,13 +10104,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:5.5.3":
-  version: 5.5.3
-  resolution: "typescript@npm:5.5.3"
+"typescript@npm:5.5.4":
+  version: 5.5.4
+  resolution: "typescript@npm:5.5.4"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/f52c71ccbc7080b034b9d3b72051d563601a4815bf3e39ded188e6ce60813f75dbedf11ad15dd4d32a12996a9ed8c7155b46c93a9b9c9bad1049766fe614bbdd
+  checksum: 10c0/422be60f89e661eab29ac488c974b6cc0a660fb2228003b297c3d10c32c90f3bcffc1009b43876a082515a3c376b1eefcce823d6e78982e6878408b9a923199c
   languageName: node
   linkType: hard
 
@@ -10124,13 +10124,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A5.5.3#optional!builtin<compat/typescript>":
-  version: 5.5.3
-  resolution: "typescript@patch:typescript@npm%3A5.5.3#optional!builtin<compat/typescript>::version=5.5.3&hash=379a07"
+"typescript@patch:typescript@npm%3A5.5.4#optional!builtin<compat/typescript>":
+  version: 5.5.4
+  resolution: "typescript@patch:typescript@npm%3A5.5.4#optional!builtin<compat/typescript>::version=5.5.4&hash=379a07"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/911c7811d61f57f07df79c4a35f56a0f426a65426a020e5fcd792f66559f399017205f5f10255329ab5a3d8c2d1f1d19530aeceffda70758a521fae1d469432e
+  checksum: 10c0/73409d7b9196a5a1217b3aaad929bf76294d3ce7d6e9766dd880ece296ee91cf7d7db6b16c6c6c630ee5096eccde726c0ef17c7dfa52b01a243e57ae1f09ef07
   languageName: node
   linkType: hard
 
