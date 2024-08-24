@@ -67,5 +67,5 @@
 		"LICENSE",
 		"package.json"
 	],
-	"packageManager": "yarn@4.3.1"
+	"packageManager": "yarn@4.4.1"
 }
