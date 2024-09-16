@@ -6878,17 +6878,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mock-property@npm:^1.0.3":
-  version: 1.0.3
-  resolution: "mock-property@npm:1.0.3"
+"mock-property@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "mock-property@npm:1.1.0"
   dependencies:
-    define-data-property: "npm:^1.1.1"
+    define-data-property: "npm:^1.1.4"
     functions-have-names: "npm:^1.2.3"
     gopd: "npm:^1.0.1"
-    has-property-descriptors: "npm:^1.0.0"
-    hasown: "npm:^2.0.0"
+    has-property-descriptors: "npm:^1.0.2"
+    hasown: "npm:^2.0.2"
     isarray: "npm:^2.0.5"
-  checksum: 10c0/faab39ef1f90fe52367f5173bf8aa2d795fb13998eea2f028f94d4d822809fdfe880627f79c39b759a265697fa88b659bef0fd9593926db6c265f3d9566bd89b
+    object-inspect: "npm:^1.13.2"
+  checksum: 10c0/b2ae21d37a64d07caf7777ec1cccebfd4043b6e27c2095aa733e03be68c1a7ac32d33fe8be433d0ae39c41a06531cd569d22029be0f401f4ffe91beb495be8ee
   languageName: node
   linkType: hard
 
@@ -6982,11 +6983,11 @@ __metadata:
     sharp: "npm:^0.33.4"
     source-map-support: "npm:0.5.21"
     tap-spec: "npm:5.0.0"
-    tape: "npm:5.8.1"
+    tape: "npm:5.9.0"
     tape-run: "npm:11.0.0"
     typedoc: "npm:0.26.7"
     typedoc-plugin-markdown: "npm:4.2.7"
-    typescript: "npm:5.5.4"
+    typescript: "npm:5.6.2"
     typescript-eslint: "npm:^7.9.0"
   languageName: unknown
   linkType: soft
@@ -7108,6 +7109,13 @@ __metadata:
   version: 1.13.1
   resolution: "object-inspect@npm:1.13.1"
   checksum: 10c0/fad603f408e345c82e946abdf4bfd774260a5ed3e5997a0b057c44153ac32c7271ff19e3a5ae39c858da683ba045ccac2f65245c12763ce4e8594f818f4a648d
+  languageName: node
+  linkType: hard
+
+"object-inspect@npm:^1.13.2":
+  version: 1.13.2
+  resolution: "object-inspect@npm:1.13.2"
+  checksum: 10c0/b97835b4c91ec37b5fd71add84f21c3f1047d1d155d00c0fcd6699516c256d4fcc6ff17a1aced873197fe447f91a3964178fd2a67a1ee2120cdaf60e81a050b4
   languageName: node
   linkType: hard
 
@@ -9742,9 +9750,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tape@npm:5.8.1":
-  version: 5.8.1
-  resolution: "tape@npm:5.8.1"
+"tape@npm:5.9.0":
+  version: 5.9.0
+  resolution: "tape@npm:5.9.0"
   dependencies:
     "@ljharb/resumer": "npm:^0.1.3"
     "@ljharb/through": "npm:^2.3.13"
@@ -9761,8 +9769,8 @@ __metadata:
     inherits: "npm:^2.0.4"
     is-regex: "npm:^1.1.4"
     minimist: "npm:^1.2.8"
-    mock-property: "npm:^1.0.3"
-    object-inspect: "npm:^1.13.1"
+    mock-property: "npm:^1.1.0"
+    object-inspect: "npm:^1.13.2"
     object-is: "npm:^1.1.6"
     object-keys: "npm:^1.1.1"
     object.assign: "npm:^4.1.5"
@@ -9770,7 +9778,7 @@ __metadata:
     string.prototype.trim: "npm:^1.2.9"
   bin:
     tape: bin/tape
-  checksum: 10c0/5ce8769d6ed22f7d5842dfa4615207d9a2595000d82ba96604fb3017f3cc8e6a97f5ce5f8e5176582c7e176b65ebb181f2cfa863fae47be5a6d261679ae2f951
+  checksum: 10c0/06c20103eb1971be901fc230a635d079db2d5ef16a2743d3340991f7754ff8380d24a0cb23774e9e5b15f254faeed536e1e0624a0cf80d2142d09f35a61df189
   languageName: node
   linkType: hard
 
@@ -10141,13 +10149,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:5.5.4":
-  version: 5.5.4
-  resolution: "typescript@npm:5.5.4"
+"typescript@npm:5.6.2":
+  version: 5.6.2
+  resolution: "typescript@npm:5.6.2"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/422be60f89e661eab29ac488c974b6cc0a660fb2228003b297c3d10c32c90f3bcffc1009b43876a082515a3c376b1eefcce823d6e78982e6878408b9a923199c
+  checksum: 10c0/3ed8297a8c7c56b7fec282532503d1ac795239d06e7c4966b42d4330c6cf433a170b53bcf93a130a7f14ccc5235de5560df4f1045eb7f3550b46ebed16d3c5e5
   languageName: node
   linkType: hard
 
@@ -10161,13 +10169,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A5.5.4#optional!builtin<compat/typescript>":
-  version: 5.5.4
-  resolution: "typescript@patch:typescript@npm%3A5.5.4#optional!builtin<compat/typescript>::version=5.5.4&hash=379a07"
+"typescript@patch:typescript@npm%3A5.6.2#optional!builtin<compat/typescript>":
+  version: 5.6.2
+  resolution: "typescript@patch:typescript@npm%3A5.6.2#optional!builtin<compat/typescript>::version=5.6.2&hash=8c6c40"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/73409d7b9196a5a1217b3aaad929bf76294d3ce7d6e9766dd880ece296ee91cf7d7db6b16c6c6c630ee5096eccde726c0ef17c7dfa52b01a243e57ae1f09ef07
+  checksum: 10c0/94eb47e130d3edd964b76da85975601dcb3604b0c848a36f63ac448d0104e93819d94c8bdf6b07c00120f2ce9c05256b8b6092d23cf5cf1c6fa911159e4d572f
   languageName: node
   linkType: hard
 
