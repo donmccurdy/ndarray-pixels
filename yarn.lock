@@ -6986,7 +6986,7 @@ __metadata:
     tape: "npm:5.9.0"
     tape-run: "npm:11.0.0"
     typedoc: "npm:0.26.7"
-    typedoc-plugin-markdown: "npm:4.2.7"
+    typedoc-plugin-markdown: "npm:4.2.8"
     typescript: "npm:5.6.2"
     typescript-eslint: "npm:^7.9.0"
   languageName: unknown
@@ -10107,12 +10107,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc-plugin-markdown@npm:4.2.7":
-  version: 4.2.7
-  resolution: "typedoc-plugin-markdown@npm:4.2.7"
+"typedoc-plugin-markdown@npm:4.2.8":
+  version: 4.2.8
+  resolution: "typedoc-plugin-markdown@npm:4.2.8"
   peerDependencies:
     typedoc: 0.26.x
-  checksum: 10c0/b806ed39a0c34eca2d552bf580a1c8cdc794e90b88fb4e0a55cc0a96f01b317c5c6b7c1cb2a6e378b8fdd164ebf0da7b17534137ec849dfd6caf48d8f1b941d1
+  checksum: 10c0/d79548f65f1d745f68c964cfd03d2cb89039f1afc285e6386691b53f3b5c07332331b7308cba434621dcde615aff3068f1b91fbbe958c968c6501beedbfea836
   languageName: node
   linkType: hard
 
