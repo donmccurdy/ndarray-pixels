@@ -2942,9 +2942,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"browserify@npm:17.0.0":
-  version: 17.0.0
-  resolution: "browserify@npm:17.0.0"
+"browserify@npm:17.0.1":
+  version: 17.0.1
+  resolution: "browserify@npm:17.0.1"
   dependencies:
     JSONStream: "npm:^1.0.3"
     assert: "npm:^1.4.0"
@@ -2963,7 +2963,7 @@ __metadata:
     duplexer2: "npm:~0.1.2"
     events: "npm:^3.0.0"
     glob: "npm:^7.1.0"
-    has: "npm:^1.0.0"
+    hasown: "npm:^2.0.0"
     htmlescape: "npm:^1.1.0"
     https-browserify: "npm:^1.0.0"
     inherits: "npm:~2.0.1"
@@ -2996,7 +2996,7 @@ __metadata:
     xtend: "npm:^4.0.0"
   bin:
     browserify: bin/cmd.js
-  checksum: 10c0/d6fe26f21c23cc7f734ecf67fb9e64a11d4cfebce0ca31bc9cefbb26bcf9363a136289b26f154262a15144912a8ebec4b5a834fee5d67eb354d21e2687a86f90
+  checksum: 10c0/d55cb025620ad2ef52082b499305ac0d5fbca67994d6e34793fefa5aee1e8f16739c1b1aa29ba705bc4d76f93afa3f844b23ff7e870f802d3bb32f72bf17dc8e
   languageName: node
   linkType: hard
 
@@ -5325,13 +5325,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"has@npm:^1.0.0":
-  version: 1.0.4
-  resolution: "has@npm:1.0.4"
-  checksum: 10c0/82c1220573dc1f0a014a5d6189ae52a1f820f99dfdc00323c3a725b5002dcb7f04e44f460fea7af068474b2dd7c88cbe1846925c84017be9e31e1708936d305b
-  languageName: node
-  linkType: hard
-
 "hash-base@npm:^3.0.0":
   version: 3.1.0
   resolution: "hash-base@npm:3.1.0"
@@ -6973,7 +6966,7 @@ __metadata:
     "@types/ndarray-ops": "npm:1.2.7"
     "@types/node": "npm:20.16.10"
     "@types/tape": "npm:5.6.4"
-    browserify: "npm:17.0.0"
+    browserify: "npm:17.0.1"
     eslint: "npm:8.57.0"
     microbundle: "npm:0.15.1"
     ndarray: "npm:^1.0.19"
@@ -6985,8 +6978,8 @@ __metadata:
     tap-spec: "npm:5.0.0"
     tape: "npm:5.9.0"
     tape-run: "npm:11.0.0"
-    typedoc: "npm:0.26.7"
-    typedoc-plugin-markdown: "npm:4.2.8"
+    typedoc: "npm:0.26.8"
+    typedoc-plugin-markdown: "npm:4.2.9"
     typescript: "npm:5.6.2"
     typescript-eslint: "npm:^7.9.0"
   languageName: unknown
@@ -10107,18 +10100,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc-plugin-markdown@npm:4.2.8":
-  version: 4.2.8
-  resolution: "typedoc-plugin-markdown@npm:4.2.8"
+"typedoc-plugin-markdown@npm:4.2.9":
+  version: 4.2.9
+  resolution: "typedoc-plugin-markdown@npm:4.2.9"
   peerDependencies:
     typedoc: 0.26.x
-  checksum: 10c0/d79548f65f1d745f68c964cfd03d2cb89039f1afc285e6386691b53f3b5c07332331b7308cba434621dcde615aff3068f1b91fbbe958c968c6501beedbfea836
+  checksum: 10c0/68e49a7347b30fc4d7f1bfecc674fdbb2cfa0d6f62d09d13f24deff4ed6eeb56fbad5dbbc5bab084507eadf178dc25e64833a3b2222be572a3a7fe269d7bc6fd
   languageName: node
   linkType: hard
 
-"typedoc@npm:0.26.7":
-  version: 0.26.7
-  resolution: "typedoc@npm:0.26.7"
+"typedoc@npm:0.26.8":
+  version: 0.26.8
+  resolution: "typedoc@npm:0.26.8"
   dependencies:
     lunr: "npm:^2.3.9"
     markdown-it: "npm:^14.1.0"
@@ -10129,7 +10122,7 @@ __metadata:
     typescript: 4.6.x || 4.7.x || 4.8.x || 4.9.x || 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x || 5.5.x || 5.6.x
   bin:
     typedoc: bin/typedoc
-  checksum: 10c0/36a73dc08670478d34e9232f4f95b928ca51010e5926dbe22bd5582e9ead914ec7628e73f02488811f79b685abca8f1211c6cf879313cf1122a5ea7eb1bbaf5a
+  checksum: 10c0/8381e50139ca8df9e9dfcaff35d6a5d1a226b32969ed2dcbc65aafacd1aaef2ecc4712f229229e8bb3850971b530af2e79312fcd2e18febe950c03710c504eec
   languageName: node
   linkType: hard
 
