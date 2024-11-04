@@ -2127,12 +2127,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:20.17.1":
-  version: 20.17.1
-  resolution: "@types/node@npm:20.17.1"
+"@types/node@npm:20.17.6":
+  version: 20.17.6
+  resolution: "@types/node@npm:20.17.6"
   dependencies:
     undici-types: "npm:~6.19.2"
-  checksum: 10c0/214cf1fffff9c80ae0d49d7dd1f04254215d49711276fff44ff6f61e36dc8d53520509a88add6955fe029b2259c87eaf284b43bc1236d4f4f06bd80c46f0e2b8
+  checksum: 10c0/5918c7ff8368bbe6d06d5e739c8ae41a9db41628f28760c60cda797be7d233406f07c4d0e6fdd960a0a342ec4173c2217eb6624e06bece21c1f1dd1b92805c15
   languageName: node
   linkType: hard
 
@@ -6964,7 +6964,7 @@ __metadata:
     "@eslint/js": "npm:^9.2.0"
     "@types/ndarray": "npm:^1.0.14"
     "@types/ndarray-ops": "npm:1.2.7"
-    "@types/node": "npm:20.17.1"
+    "@types/node": "npm:20.17.6"
     "@types/tape": "npm:5.6.4"
     browserify: "npm:17.0.1"
     eslint: "npm:8.57.0"
@@ -6978,8 +6978,8 @@ __metadata:
     tap-spec: "npm:5.0.0"
     tape: "npm:5.9.0"
     tape-run: "npm:11.0.0"
-    typedoc: "npm:0.26.10"
-    typedoc-plugin-markdown: "npm:4.2.9"
+    typedoc: "npm:0.26.11"
+    typedoc-plugin-markdown: "npm:4.2.10"
     typescript: "npm:5.6.3"
     typescript-eslint: "npm:^7.9.0"
   languageName: unknown
@@ -10100,18 +10100,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc-plugin-markdown@npm:4.2.9":
-  version: 4.2.9
-  resolution: "typedoc-plugin-markdown@npm:4.2.9"
+"typedoc-plugin-markdown@npm:4.2.10":
+  version: 4.2.10
+  resolution: "typedoc-plugin-markdown@npm:4.2.10"
   peerDependencies:
     typedoc: 0.26.x
-  checksum: 10c0/68e49a7347b30fc4d7f1bfecc674fdbb2cfa0d6f62d09d13f24deff4ed6eeb56fbad5dbbc5bab084507eadf178dc25e64833a3b2222be572a3a7fe269d7bc6fd
+  checksum: 10c0/5771602a2d673824e1a01841f81eb0fe45fe2d6b61070c278903e2c14e5aab4eafd7c37831b7297aaef27185b4eb2b638111add22fc2a0e26b6165b3c54d0bd1
   languageName: node
   linkType: hard
 
-"typedoc@npm:0.26.10":
-  version: 0.26.10
-  resolution: "typedoc@npm:0.26.10"
+"typedoc@npm:0.26.11":
+  version: 0.26.11
+  resolution: "typedoc@npm:0.26.11"
   dependencies:
     lunr: "npm:^2.3.9"
     markdown-it: "npm:^14.1.0"
@@ -10122,7 +10122,7 @@ __metadata:
     typescript: 4.6.x || 4.7.x || 4.8.x || 4.9.x || 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x || 5.5.x || 5.6.x
   bin:
     typedoc: bin/typedoc
-  checksum: 10c0/0578a8e53dcddcdc8f684e55f224cf086f2d8ba54cb21e05faaa43ced66ddd9429eef85d9b7b5c8a89f865c4c6aaa078fd91ebdd1874074ff68a5920f6e81c14
+  checksum: 10c0/441104f1215af8d7589375691afc993bea1fab7c9b7b91ead22781e994f9f21a7a779a283dc42d72260171164185fad7dbcf61166b0442107d9c7decb84b2aee
   languageName: node
   linkType: hard
 
