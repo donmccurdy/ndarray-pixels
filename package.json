@@ -44,8 +44,8 @@
 	"devDependencies": {
 		"@eslint/js": "^9.2.0",
 		"@types/ndarray-ops": "1.2.7",
-		"@types/node": "22.10.1",
-		"@types/tape": "5.6.5",
+		"@types/node": "22.10.3",
+		"@types/tape": "5.8.0",
 		"browserify": "17.0.1",
 		"eslint": "8.57.0",
 		"microbundle": "0.15.1",
@@ -55,8 +55,8 @@
 		"tap-spec": "5.0.0",
 		"tape": "5.9.0",
 		"tape-run": "11.0.0",
-		"typedoc": "0.27.2",
-		"typedoc-plugin-markdown": "4.3.1",
+		"typedoc": "0.27.6",
+		"typedoc-plugin-markdown": "4.4.0",
 		"typescript": "5.7.2",
 		"typescript-eslint": "^7.9.0"
 	},
