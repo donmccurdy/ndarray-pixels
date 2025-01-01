@@ -2148,12 +2148,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:22.10.1":
-  version: 22.10.1
-  resolution: "@types/node@npm:22.10.1"
+"@types/node@npm:22.10.3":
+  version: 22.10.3
+  resolution: "@types/node@npm:22.10.3"
   dependencies:
     undici-types: "npm:~6.20.0"
-  checksum: 10c0/0fbb6d29fa35d807f0223a4db709c598ac08d66820240a2cd6a8a69b8f0bc921d65b339d850a666b43b4e779f967e6ed6cf6f0fca3575e08241e6b900364c234
+  checksum: 10c0/0471a73c8672c803b1f2b912c2c466d00a217186933e8ff38ec7779b4a3f88a0eea3b513a59f2abf9de17cc8bbca688a3c6643c6513ac8dd1c3e45d25fab93b1
   languageName: node
   linkType: hard
 
@@ -2191,13 +2191,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/tape@npm:5.6.5":
-  version: 5.6.5
-  resolution: "@types/tape@npm:5.6.5"
+"@types/tape@npm:5.8.0":
+  version: 5.8.0
+  resolution: "@types/tape@npm:5.8.0"
   dependencies:
     "@ljharb/through": "npm:*"
     "@types/node": "npm:*"
-  checksum: 10c0/9466d49bd016d999112cee5b88556dfb4b0bfddf5a3177f61b8815929ead655bad6afe4baff3b3cee1a9e09fc6999954a0379e048b29075ce8ceb7497b7c030f
+    mock-property: "npm:*"
+  checksum: 10c0/1a770960247716b5a791cc3d632abbc7c617302f780e94e896a64abce7a9804e4dd1f37809228db350252b58edcae5bcca2949fc8c9d8f5c68af3a7f1ad15221
   languageName: node
   linkType: hard
 
@@ -6883,7 +6884,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mock-property@npm:^1.1.0":
+"mock-property@npm:*, mock-property@npm:^1.1.0":
   version: 1.1.0
   resolution: "mock-property@npm:1.1.0"
   dependencies:
@@ -6976,8 +6977,8 @@ __metadata:
     "@eslint/js": "npm:^9.2.0"
     "@types/ndarray": "npm:^1.0.14"
     "@types/ndarray-ops": "npm:1.2.7"
-    "@types/node": "npm:22.10.1"
-    "@types/tape": "npm:5.6.5"
+    "@types/node": "npm:22.10.3"
+    "@types/tape": "npm:5.8.0"
     browserify: "npm:17.0.1"
     eslint: "npm:8.57.0"
     microbundle: "npm:0.15.1"
@@ -6990,8 +6991,8 @@ __metadata:
     tap-spec: "npm:5.0.0"
     tape: "npm:5.9.0"
     tape-run: "npm:11.0.0"
-    typedoc: "npm:0.27.2"
-    typedoc-plugin-markdown: "npm:4.3.1"
+    typedoc: "npm:0.27.6"
+    typedoc-plugin-markdown: "npm:4.4.0"
     typescript: "npm:5.7.2"
     typescript-eslint: "npm:^7.9.0"
   languageName: unknown
@@ -10101,18 +10102,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc-plugin-markdown@npm:4.3.1":
-  version: 4.3.1
-  resolution: "typedoc-plugin-markdown@npm:4.3.1"
+"typedoc-plugin-markdown@npm:4.4.0":
+  version: 4.4.0
+  resolution: "typedoc-plugin-markdown@npm:4.4.0"
   peerDependencies:
     typedoc: 0.27.x
-  checksum: 10c0/031e7d61611899fc4f45953575b7b63734c34379c1f9791b42e0ab4605dd2fff952dd35d53d8edd8068afdc9b127858a6b93fda94ec065e8a6ab869012e84500
+  checksum: 10c0/0ebd3daae597ea3b7d86fbce4cb2e283d819ab8c796d975c9a4a1648e97be69b9c4a8a428d9977c95b104677251844e6c3b32e08f763ec304094556dad19e97d
   languageName: node
   linkType: hard
 
-"typedoc@npm:0.27.2":
-  version: 0.27.2
-  resolution: "typedoc@npm:0.27.2"
+"typedoc@npm:0.27.6":
+  version: 0.27.6
+  resolution: "typedoc@npm:0.27.6"
   dependencies:
     "@gerrit0/mini-shiki": "npm:^1.24.0"
     lunr: "npm:^2.3.9"
@@ -10123,7 +10124,7 @@ __metadata:
     typescript: 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x || 5.5.x || 5.6.x || 5.7.x
   bin:
     typedoc: bin/typedoc
-  checksum: 10c0/85184d40760a5528a7f82a6b1a2932973208fc55762a4b8c3445b895c4fbdd65bbfbde9b1c2b335019129b59e36eda294080de9d332df6e1c856500234f0bb4d
+  checksum: 10c0/74af856fc2b9ca151567db8e08737a6ab8b29efb611414510eb833f80723245bc6ade00f2be7a410e335833cfd5e3deb1ae1ecfdb4da3a13c65faedd1f1805b0
   languageName: node
   linkType: hard
 
