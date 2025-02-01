@@ -2148,12 +2148,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:22.10.3":
-  version: 22.10.3
-  resolution: "@types/node@npm:22.10.3"
+"@types/node@npm:22.13.0":
+  version: 22.13.0
+  resolution: "@types/node@npm:22.13.0"
   dependencies:
     undici-types: "npm:~6.20.0"
-  checksum: 10c0/0471a73c8672c803b1f2b912c2c466d00a217186933e8ff38ec7779b4a3f88a0eea3b513a59f2abf9de17cc8bbca688a3c6643c6513ac8dd1c3e45d25fab93b1
+  checksum: 10c0/9cf6358b2863ae7bf9588ca1cc3d87f6a6289c3880e95a046a188760666870e2c12502df8b0a473bec8aa8ffee85e025d60382a6104b10f197120793235b2c22
   languageName: node
   linkType: hard
 
@@ -2191,14 +2191,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/tape@npm:5.8.0":
-  version: 5.8.0
-  resolution: "@types/tape@npm:5.8.0"
+"@types/tape@npm:5.8.1":
+  version: 5.8.1
+  resolution: "@types/tape@npm:5.8.1"
   dependencies:
     "@ljharb/through": "npm:*"
     "@types/node": "npm:*"
     mock-property: "npm:*"
-  checksum: 10c0/1a770960247716b5a791cc3d632abbc7c617302f780e94e896a64abce7a9804e4dd1f37809228db350252b58edcae5bcca2949fc8c9d8f5c68af3a7f1ad15221
+  checksum: 10c0/8962c5031d005d1d4c0a5a9c388298c0d6116604204ffb68080fa56d2ea4c77a652e6bddf0ddc8b789f4655ebc9a820dfdd079a27640c9455ab71d49ea433f0c
   languageName: node
   linkType: hard
 
@@ -6977,8 +6977,8 @@ __metadata:
     "@eslint/js": "npm:^9.2.0"
     "@types/ndarray": "npm:^1.0.14"
     "@types/ndarray-ops": "npm:1.2.7"
-    "@types/node": "npm:22.10.3"
-    "@types/tape": "npm:5.8.0"
+    "@types/node": "npm:22.13.0"
+    "@types/tape": "npm:5.8.1"
     browserify: "npm:17.0.1"
     eslint: "npm:8.57.0"
     microbundle: "npm:0.15.1"
@@ -6993,7 +6993,7 @@ __metadata:
     tape-run: "npm:11.0.0"
     typedoc: "npm:0.27.6"
     typedoc-plugin-markdown: "npm:4.4.1"
-    typescript: "npm:5.7.2"
+    typescript: "npm:5.7.3"
     typescript-eslint: "npm:^7.9.0"
   languageName: unknown
   linkType: soft
@@ -10144,13 +10144,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:5.7.2":
-  version: 5.7.2
-  resolution: "typescript@npm:5.7.2"
+"typescript@npm:5.7.3":
+  version: 5.7.3
+  resolution: "typescript@npm:5.7.3"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/a873118b5201b2ef332127ef5c63fb9d9c155e6fdbe211cbd9d8e65877283797cca76546bad742eea36ed7efbe3424a30376818f79c7318512064e8625d61622
+  checksum: 10c0/b7580d716cf1824736cc6e628ab4cd8b51877408ba2be0869d2866da35ef8366dd6ae9eb9d0851470a39be17cbd61df1126f9e211d8799d764ea7431d5435afa
   languageName: node
   linkType: hard
 
@@ -10164,13 +10164,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A5.7.2#optional!builtin<compat/typescript>":
-  version: 5.7.2
-  resolution: "typescript@patch:typescript@npm%3A5.7.2#optional!builtin<compat/typescript>::version=5.7.2&hash=5786d5"
+"typescript@patch:typescript@npm%3A5.7.3#optional!builtin<compat/typescript>":
+  version: 5.7.3
+  resolution: "typescript@patch:typescript@npm%3A5.7.3#optional!builtin<compat/typescript>::version=5.7.3&hash=5786d5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 10c0/f3b8082c9d1d1629a215245c9087df56cb784f9fb6f27b5d55577a20e68afe2a889c040aacff6d27e35be165ecf9dca66e694c42eb9a50b3b2c451b36b5675cb
+  checksum: 10c0/6fd7e0ed3bf23a81246878c613423730c40e8bdbfec4c6e4d7bf1b847cbb39076e56ad5f50aa9d7ebd89877999abaee216002d3f2818885e41c907caaa192cc4
   languageName: node
   linkType: hard
 
