@@ -39,7 +39,7 @@
 		"@types/ndarray": "^1.0.14",
 		"ndarray": "^1.0.19",
 		"ndarray-ops": "^1.2.2",
-		"sharp": "^0.33.4"
+		"sharp": "^0.34.0"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.2.0",
