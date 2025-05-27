@@ -1,35 +1,6 @@
 import ndarray from 'ndarray';
 import type { NdArray } from 'ndarray';
 
-function decodeImage(blob: Blob): Promise<HTMLImageElement | ImageBitmap> {
-	// Decode image with createImageBitmap API.
-	if (typeof createImageBitmap === 'function') {
-		return createImageBitmap(blob, {
-			premultiplyAlpha: 'none',
-		});
-	}
-	if (typeof Image !== 'function') {
-		throw new Error('[ndarray-pixels] Can not decode image.');
-	}
-	const path = URL.createObjectURL(blob);
-	
-	// Decode image with Image constructor API.
-	return new Promise((resolve, reject) => {
-		const img = new Image();
-		img.crossOrigin = 'anonymous';
-		img.onload = function () {
-			URL.revokeObjectURL(path as string);
-
-			resolve(img);
-		};
-		img.onerror = (err) => {
-			URL.revokeObjectURL(path as string);
-			reject(err);
-		};
-		img.src = path;
-	});
-}
-
 export function getPixelsInternal(
 	buffer: Uint8Array,
 	mimeType: string
@@ -40,7 +11,10 @@ export function getPixelsInternal(
 	}
 
 	const blob = new Blob([buffer], { type: mimeType });
-	return decodeImage(blob).then(img => {
+	return createImageBitmap(blob, {
+		premultiplyAlpha: 'none',
+		colorSpaceConversion: 'none',
+	}).then(img => {
 		const canvas = new OffscreenCanvas(img.width, img.height);
 		const context = canvas.getContext('2d')!;
 		context.drawImage(img, 0, 0);
