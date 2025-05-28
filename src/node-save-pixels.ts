@@ -1,11 +1,11 @@
-import { NdArray } from 'ndarray';
-import sharp, { FormatEnum } from 'sharp';
+import type { NdArray } from 'ndarray';
+import sharp, { type FormatEnum } from 'sharp';
 import { putPixelData } from './common';
 import type { ImageEncodeOptions } from './common';
 
 export async function savePixelsInternal(
 	pixels: NdArray<Uint8Array | Uint8ClampedArray>,
-	options: ImageEncodeOptions
+	options: ImageEncodeOptions,
 ): Promise<Uint8Array> {
 	const [width, height, channels] = pixels.shape as [number, number, 4];
 	const data = putPixelData(pixels, new Uint8Array(width * height * channels));

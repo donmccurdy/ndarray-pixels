@@ -36,9 +36,9 @@ async function getPixels(data: Uint8Array, mimeType: string): Promise<NdArray<Ui
  */
 async function savePixels(
 	pixels: NdArray<Uint8Array | Uint8ClampedArray>,
-	typeOrOptions: string | { type?: string; quality?: number }
+	typeOrOptions: string | { type?: string; quality?: number },
 ): Promise<Uint8Array> {
-	let options;
+	let options: { type?: string; quality?: number };
 	if (typeof typeOrOptions === 'string') {
 		options = {
 			type: typeOrOptions,

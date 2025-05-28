@@ -3,7 +3,7 @@ import type { NdArray } from 'ndarray';
 
 export function getPixelsInternal(
 	buffer: Uint8Array,
-	mimeType: string
+	mimeType: string,
 ): Promise<NdArray<Uint8Array>> {
 	// Warn for Data URIs, URLs, and file paths. Support removed in v3.
 	if (!(buffer instanceof Uint8Array)) {
@@ -14,7 +14,7 @@ export function getPixelsInternal(
 	return createImageBitmap(blob, {
 		premultiplyAlpha: 'none',
 		colorSpaceConversion: 'none',
-	}).then(img => {
+	}).then((img) => {
 		const canvas = new OffscreenCanvas(img.width, img.height);
 		const context = canvas.getContext('2d')!;
 		context.drawImage(img, 0, 0);
@@ -23,7 +23,7 @@ export function getPixelsInternal(
 			new Uint8Array(pixels.data),
 			[img.width, img.height, 4],
 			[4, 4 * img.width, 1],
-			0
+			0,
 		);
 	});
 }
