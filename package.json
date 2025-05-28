@@ -32,9 +32,12 @@
 		"lint": "biome check src test",
 		"lint:ci": "biome ci src test",
 		"docs": "typedoc src/index.ts --plugin typedoc-plugin-markdown --out ./docs --hideBreadcrumbs --hidePageHeader && cat docs/functions/*.md | sed \"s/# /### /g\" | replace-between --target README.md --token API && rm -rf docs",
-		"preversion": "yarn dist && yarn test",
-		"version": "yarn dist && yarn docs && git add -u",
-		"postversion": "git push && git push --tags && npm publish"
+		"release": "yarn postversion:commit && yarn npm publish && yarn postversion:push",
+		"prerelease": "yarn postversion:commit && yarn npm publish --tag alpha && yarn postversion:push",
+		"postversion:commit": "git add -u && git commit -m \"chore(release): v$npm_package_version\" && git tag -a v$npm_package_version -m v$npm_package_version",
+		"postversion:push": "git push && git push --tags && yarn coverage:report",
+		"prepublish": "yarn lint && yarn test && yarn validate",
+		"prepack": "yarn clean && yarn build && yarn docs"
 	},
 	"dependencies": {
 		"@biomejs/biome": "^1.9.4",

@@ -23,6 +23,6 @@
     }
   },
   "files": {
-    "ignore": ["coverage/**", "dist/**"]
+    "ignore": ["coverage/**", "dist/**", "package.json"]
   }
 }
