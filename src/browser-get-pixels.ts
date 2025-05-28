@@ -11,32 +11,19 @@ export function getPixelsInternal(
 	}
 
 	const blob = new Blob([buffer], { type: mimeType });
-	const path = URL.createObjectURL(blob);
-
-	// Decode image with Canvas API.
-	return new Promise((resolve, reject) => {
-		const img = new Image();
-		img.crossOrigin = 'anonymous';
-		img.onload = function () {
-			URL.revokeObjectURL(path as string);
-
-			const canvas = new OffscreenCanvas(img.width, img.height);
-			const context = canvas.getContext('2d')!;
-			context.drawImage(img, 0, 0);
-			const pixels = context.getImageData(0, 0, img.width, img.height);
-			resolve(
-				ndarray(
-					new Uint8Array(pixels.data),
-					[img.width, img.height, 4],
-					[4, 4 * img.width, 1],
-					0
-				)
-			);
-		};
-		img.onerror = (err) => {
-			URL.revokeObjectURL(path as string);
-			reject(err);
-		};
-		img.src = path;
+	return createImageBitmap(blob, {
+		premultiplyAlpha: 'none',
+		colorSpaceConversion: 'none',
+	}).then(img => {
+		const canvas = new OffscreenCanvas(img.width, img.height);
+		const context = canvas.getContext('2d')!;
+		context.drawImage(img, 0, 0);
+		const pixels = context.getImageData(0, 0, img.width, img.height);
+		return ndarray(
+			new Uint8Array(pixels.data),
+			[img.width, img.height, 4],
+			[4, 4 * img.width, 1],
+			0
+		);
 	});
 }
