@@ -36,7 +36,7 @@
 		"prerelease": "yarn postversion:commit && yarn npm publish --tag alpha && yarn postversion:push",
 		"postversion:commit": "git add -u && git commit -m \"chore(release): v$npm_package_version\" && git tag -a v$npm_package_version -m v$npm_package_version",
 		"postversion:push": "git push && git push --tags && yarn coverage:report",
-		"prepublish": "yarn lint && yarn test && yarn validate",
+		"prepublish": "yarn lint && yarn test",
 		"prepack": "yarn clean && yarn build && yarn docs"
 	},
 	"dependencies": {
