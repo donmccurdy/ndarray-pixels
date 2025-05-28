@@ -1,9 +1,9 @@
-import ndarray, { NdArray } from 'ndarray';
+import ndarray, { type NdArray } from 'ndarray';
 import sharp from 'sharp';
 
 export async function getPixelsInternal(
 	buffer: Uint8Array,
-	_mimeType: string
+	_mimeType: string,
 ): Promise<NdArray<Uint8Array>> {
 	// Warn for Data URIs, URLs, and file paths. Support removed in v3.
 	if (!(buffer instanceof Uint8Array)) {
@@ -19,6 +19,6 @@ export async function getPixelsInternal(
 		new Uint8Array(data),
 		[info.width, info.height, 4],
 		[4, (4 * info.width) | 0, 1],
-		0
+		0,
 	);
 }

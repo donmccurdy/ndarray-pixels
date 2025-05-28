@@ -5,12 +5,12 @@ require('source-map-support').install();
 const test = require('tape');
 const ndarray = require('ndarray');
 
-module.exports = function (platform, getPixels, savePixels) {
+module.exports = (platform, getPixels, savePixels) => {
 	test(`ndarray-pixels | ${platform}`, async (t) => {
-		let pixelsIn = ndarray(
+		const pixelsIn = ndarray(
 			new Uint8Array([255, 0, 0, 255, 0, 0, 0, 255, 255, 0, 0, 255, 0, 0, 0, 255]),
 			[2, 2, 4],
-			[4, 2 * 4, 1] // https://github.com/scijs/get-pixels/issues/52
+			[4, 2 * 4, 1], // https://github.com/scijs/get-pixels/issues/52
 		);
 
 		const data = await savePixels(pixelsIn, 'image/png');
@@ -24,9 +24,9 @@ module.exports = function (platform, getPixels, savePixels) {
 	test(`ndarray-pixels (webp lossless) | ${platform}, async ()`, async (t) => {
 		const width = 7;
 		const height = 13;
-		let pixelsIn = ndarray(new Uint8Array(width * height * 4), [width, height, 4]).transpose(
+		const pixelsIn = ndarray(new Uint8Array(width * height * 4), [width, height, 4]).transpose(
 			1,
-			0
+			0,
 		);
 		for (let i = 0; i < pixelsIn.shape[0]; ++i) {
 			for (let j = 0; j < pixelsIn.shape[1]; ++j) {
@@ -47,9 +47,9 @@ module.exports = function (platform, getPixels, savePixels) {
 	test(`ndarray-pixels (webp lossy) | ${platform}, async ()`, async (t) => {
 		const width = 7;
 		const height = 13;
-		let pixelsIn = ndarray(new Uint8Array(width * height * 4), [width, height, 4]).transpose(
+		const pixelsIn = ndarray(new Uint8Array(width * height * 4), [width, height, 4]).transpose(
 			1,
-			0
+			0,
 		);
 		for (let i = 0; i < pixelsIn.shape[0]; ++i) {
 			for (let j = 0; j < pixelsIn.shape[1]; ++j) {

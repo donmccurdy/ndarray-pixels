@@ -12,10 +12,10 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [v18, v20]
+                node-version: [v20, v22]
         env:
             CI: true
-            LINT: ${{ matrix.node-version == 'v18' && true || false }}
+            LINT: ${{ matrix.node-version == 'v22' && true || false }}
         steps:
             - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
             - name: Use Node.js ${{ matrix.node-version }}
@@ -27,5 +27,5 @@ jobs:
             - run: yarn dist
             - run: yarn test:node
             - run: yarn test:browser
-            - run: yarn lint
+            - run: yarn lint:ci
               if: ${{ env.LINT == 'true' }}

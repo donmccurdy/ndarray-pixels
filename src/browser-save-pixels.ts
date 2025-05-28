@@ -4,7 +4,7 @@ import type { ImageEncodeOptions } from './common';
 
 export async function savePixelsInternal(
 	pixels: NdArray<Uint8Array | Uint8ClampedArray>,
-	options: ImageEncodeOptions
+	options: ImageEncodeOptions,
 ): Promise<Uint8Array> {
 	// Create OffscreenCanvas and write pixel data.
 	const canvas = new OffscreenCanvas(pixels.shape[0], pixels.shape[1]);
@@ -21,7 +21,7 @@ export async function savePixelsInternal(
 /** Creates readable stream from given OffscreenCanvas and options. */
 async function streamCanvas(
 	canvas: OffscreenCanvas,
-	options: ImageEncodeOptions
+	options: ImageEncodeOptions,
 ): Promise<Uint8Array> {
 	const blob = await canvas.convertToBlob(options);
 	const ab = await blob.arrayBuffer();
