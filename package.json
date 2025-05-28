@@ -1,6 +1,6 @@
 {
 	"name": "ndarray-pixels",
-	"version": "5.0.0-alpha.2",
+	"version": "5.0.0",
 	"description": "ndarray-pixels",
 	"type": "module",
 	"sideEffects": false,
@@ -69,6 +69,5 @@
 		"LICENSE",
 		"package.json"
 	],
-	"packageManager": "yarn@4.9.1",
-	"stableVersion": "4.1.0"
+	"packageManager": "yarn@4.9.1"
 }
