@@ -1,6 +1,6 @@
 {
 	"name": "ndarray-pixels",
-	"version": "5.0.0-alpha.0",
+	"version": "4.1.1-0",
 	"description": "ndarray-pixels",
 	"type": "module",
 	"sideEffects": false,
