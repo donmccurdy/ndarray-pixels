@@ -88,7 +88,9 @@ fs.writeFileSync('./output.png', bufferOut);
 
 ### Function: getPixels()
 
-> **getPixels**(`data`, `mimeType`): `Promise`\<`NdArray`\<`Uint8Array`\>\>
+> **getPixels**(`data`, `mimeType`): `Promise`\<`NdArray`\<`Uint8Array`\<`ArrayBufferLike`\>\>\>
+
+Defined in: [index.ts:17](https://github.com/donmccurdy/ndarray-pixels/blob/f99d69dfb8f5c5db473e14a263fb027c478f4359/src/index.ts#L17)
 
 Decodes image data to an `ndarray`.
 
@@ -99,22 +101,24 @@ the necessary support in Canvas 2D.
 
 #### Parameters
 
-• **data**: `Uint8Array`
+##### data
 
-• **mimeType**: `string`
+`Uint8Array`
+
+##### mimeType
+
+`string`
 
 `image/jpeg`, `image/png`, etc.
 
 #### Returns
 
-`Promise`\<`NdArray`\<`Uint8Array`\>\>
-
-#### Source
-
-[index.ts:17](https://github.com/donmccurdy/ndarray-pixels/blob/c5bf2c6211099ea4610a51aa2cd7a7ed7c7c2df5/src/index.ts#L17)
+`Promise`\<`NdArray`\<`Uint8Array`\<`ArrayBufferLike`\>\>\>
 ### Function: savePixels()
 
-> **savePixels**(`pixels`, `typeOrOptions`): `Promise`\<`Uint8Array`\>
+> **savePixels**(`pixels`, `typeOrOptions`): `Promise`\<`Uint8Array`\<`ArrayBufferLike`\>\>
+
+Defined in: [index.ts:37](https://github.com/donmccurdy/ndarray-pixels/blob/f99d69dfb8f5c5db473e14a263fb027c478f4359/src/index.ts#L37)
 
 Encodes an `ndarray` as image data in the given format.
 
@@ -127,19 +131,35 @@ the necessary support in Canvas 2D.
 
 #### Parameters
 
-• **pixels**: `NdArray`\<`Uint8Array` \| `Uint8ClampedArray`\>
+##### pixels
+
+`NdArray`\<`Uint8Array`\<`ArrayBufferLike`\> \| `Uint8ClampedArray`\<`ArrayBufferLike`\>\>
 
 ndarray of shape W x H x 4.
 
-• **typeOrOptions**: `string` \| `object`
+##### typeOrOptions
 
 object with encoding options or just the type
 
+`string` |
+
+\{ `quality?`: `number`; `type?`: `string`; \}
+
+object with encoding options or just the type
+
+###### quality?
+
+`number`
+
+quality as a number from 0 to 1, inclusive
+
+###### type?
+
+`string`
+
+target format (`image/jpeg`, `image/png`, `image/webp`, etc.)
+
 #### Returns
 
-`Promise`\<`Uint8Array`\>
-
-#### Source
-
-[index.ts:37](https://github.com/donmccurdy/ndarray-pixels/blob/c5bf2c6211099ea4610a51aa2cd7a7ed7c7c2df5/src/index.ts#L37)
+`Promise`\<`Uint8Array`\<`ArrayBufferLike`\>\>
 <!--- API END --->

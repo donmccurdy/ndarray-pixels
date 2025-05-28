@@ -1,6 +1,6 @@
 {
 	"name": "ndarray-pixels",
-	"version": "4.1.1-0",
+	"version": "5.0.0-alpha.2",
 	"description": "ndarray-pixels",
 	"type": "module",
 	"sideEffects": false,
@@ -37,7 +37,7 @@
 		"postversion:commit": "git add -u && git commit -m \"chore(release): v$npm_package_version\" && git tag -a v$npm_package_version -m v$npm_package_version",
 		"postversion:push": "git push && git push --tags && yarn coverage:report",
 		"prepublish": "yarn lint && yarn test",
-		"prepack": "yarn clean && yarn build && yarn docs"
+		"prepack": "yarn clean && yarn dist && yarn docs"
 	},
 	"dependencies": {
 		"@biomejs/biome": "^1.9.4",
