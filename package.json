@@ -31,13 +31,12 @@
 		"test:browser": "browserify test/browser.test.cjs | tape-run | tap-spec",
 		"lint": "biome check src test",
 		"lint:ci": "biome ci src test",
-		"docs": "typedoc src/index.ts --plugin typedoc-plugin-markdown --out ./docs --hideBreadcrumbs --hidePageHeader && cat docs/functions/*.md | sed \"s/# /### /g\" | replace-between --target README.md --token API && rm -rf docs",
 		"release": "yarn postversion:commit && yarn npm publish && yarn postversion:push",
 		"prerelease": "yarn postversion:commit && yarn npm publish --tag alpha && yarn postversion:push",
 		"postversion:commit": "git add -u && git commit -m \"chore(release): v$npm_package_version\" && git tag -a v$npm_package_version -m v$npm_package_version",
 		"postversion:push": "git push && git push --tags",
 		"prepublish": "yarn lint && yarn test",
-		"prepack": "yarn clean && yarn dist && yarn docs"
+		"prepack": "yarn clean && yarn dist"
 	},
 	"dependencies": {
 		"@types/ndarray": "^1.0.14",
@@ -53,13 +52,10 @@
 		"browserify": "17.0.1",
 		"microbundle": "0.15.1",
 		"regenerator-runtime": "0.14.1",
-		"replace-between": "0.0.8",
 		"source-map-support": "0.5.21",
 		"tap-spec": "5.0.0",
 		"tape": "5.9.0",
 		"tape-run": "11.0.0",
-		"typedoc": "0.28.3",
-		"typedoc-plugin-markdown": "4.6.3",
 		"typescript": "5.8.3"
 	},
 	"files": [
