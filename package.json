@@ -40,13 +40,13 @@
 		"prepack": "yarn clean && yarn dist && yarn docs"
 	},
 	"dependencies": {
-		"@biomejs/biome": "^1.9.4",
 		"@types/ndarray": "^1.0.14",
 		"ndarray": "^1.0.19",
 		"ndarray-ops": "^1.2.2",
 		"sharp": "^0.34.0"
 	},
 	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
 		"@types/ndarray-ops": "1.2.7",
 		"@types/node": "22.15.3",
 		"@types/tape": "5.8.1",

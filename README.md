@@ -90,7 +90,7 @@ fs.writeFileSync('./output.png', bufferOut);
 
 > **getPixels**(`data`, `mimeType`): `Promise`\<`NdArray`\<`Uint8Array`\<`ArrayBufferLike`\>\>\>
 
-Defined in: [index.ts:17](https://github.com/donmccurdy/ndarray-pixels/blob/b7d9bcd6d68ecd1d0e991b81537f0ae4d3007cf5/src/index.ts#L17)
+Defined in: [index.ts:17](https://github.com/donmccurdy/ndarray-pixels/blob/9ccd427b2c0cfdaec4c0dc06e26ee8d0a8f6bf30/src/index.ts#L17)
 
 Decodes image data to an `ndarray`.
 
@@ -118,7 +118,7 @@ the necessary support in Canvas 2D.
 
 > **savePixels**(`pixels`, `typeOrOptions`): `Promise`\<`Uint8Array`\<`ArrayBufferLike`\>\>
 
-Defined in: [index.ts:37](https://github.com/donmccurdy/ndarray-pixels/blob/b7d9bcd6d68ecd1d0e991b81537f0ae4d3007cf5/src/index.ts#L37)
+Defined in: [index.ts:37](https://github.com/donmccurdy/ndarray-pixels/blob/9ccd427b2c0cfdaec4c0dc06e26ee8d0a8f6bf30/src/index.ts#L37)
 
 Encodes an `ndarray` as image data in the given format.
 
