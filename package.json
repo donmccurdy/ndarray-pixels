@@ -22,9 +22,9 @@
 	"author": "Don McCurdy <dm@donmccurdy.com>",
 	"license": "MIT",
 	"scripts": {
-		"dist": "yarn dist:node && yarn dist:browser",
-		"dist:node": "microbundle build --raw --no-compress --target node --format modern,cjs src/index.ts --output dist/ndarray-pixels-node.js",
-		"dist:browser": "microbundle build --raw --no-compress --target web --format modern,cjs src/index.ts --output dist/ndarray-pixels-browser.js --alias ./node-get-pixels=./browser-get-pixels.ts,./node-save-pixels=./browser-save-pixels.ts",
+		"build": "yarn build:node && yarn build:browser",
+		"build:node": "microbundle build --raw --no-compress --target node --format modern,cjs src/index.ts --output dist/ndarray-pixels-node.js",
+		"build:browser": "microbundle build --raw --no-compress --target web --format modern,cjs src/index.ts --output dist/ndarray-pixels-browser.js --alias ./node-get-pixels=./browser-get-pixels.ts,./node-save-pixels=./browser-save-pixels.ts",
 		"clean": "rm -rf dist/* || true",
 		"test": "yarn test:node && yarn test:browser",
 		"test:node": "tape test/node.test.cjs | tap-spec",
@@ -36,7 +36,7 @@
 		"postversion:commit": "git add -u && git commit -m \"chore(release): v$npm_package_version\" && git tag -a v$npm_package_version -m v$npm_package_version",
 		"postversion:push": "git push && git push --tags",
 		"prepublish": "yarn lint && yarn test",
-		"prepack": "yarn clean && yarn dist"
+		"prepack": "yarn clean && yarn build"
 	},
 	"dependencies": {
 		"@types/ndarray": "^1.0.14",
