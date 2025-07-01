@@ -47,7 +47,7 @@
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
 		"@types/ndarray-ops": "1.2.7",
-		"@types/node": "22.15.3",
+		"@types/node": "22.16.0",
 		"@types/tape": "5.8.1",
 		"browserify": "17.0.1",
 		"microbundle": "0.15.1",
