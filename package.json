@@ -45,7 +45,7 @@
 		"sharp": "^0.34.0"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^1.9.4",
+		"@biomejs/biome": "^2.0.0",
 		"@types/ndarray-ops": "1.2.7",
 		"@types/node": "22.15.3",
 		"@types/tape": "5.8.1",
