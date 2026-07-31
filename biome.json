@@ -23,6 +23,6 @@
     }
   },
   "files": {
-    "ignore": ["coverage/**", "dist/**", "package.json"]
+    "includes": ["**", "!**/coverage/**", "!**/dist/**", "!**/package.json"]
   }
 }
