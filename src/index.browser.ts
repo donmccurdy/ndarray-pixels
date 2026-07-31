@@ -1,6 +1,6 @@
 import type { NdArray } from 'ndarray';
-import { getPixelsInternal } from './node-get-pixels';
-import { savePixelsInternal } from './node-save-pixels';
+import { getPixelsInternal } from './get-pixels.browser';
+import { savePixelsInternal } from './save-pixels.browser';
 
 /**
  * Decodes image data to an `ndarray`.
