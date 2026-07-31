@@ -1,5 +1,5 @@
-import ndarray from 'ndarray';
 import type { NdArray } from 'ndarray';
+import ndarray from 'ndarray';
 
 export function getPixelsInternal(
 	buffer: Uint8Array,

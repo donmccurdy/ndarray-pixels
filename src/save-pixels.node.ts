@@ -1,7 +1,7 @@
 import type { NdArray } from 'ndarray';
 import sharp, { type FormatEnum } from 'sharp';
-import { putPixelData } from './common';
 import type { ImageEncodeOptions } from './common';
+import { putPixelData } from './common';
 
 export async function savePixelsInternal(
 	pixels: NdArray<Uint8Array | Uint8ClampedArray>,

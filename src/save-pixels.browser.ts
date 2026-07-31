@@ -1,6 +1,6 @@
 import type { NdArray } from 'ndarray';
-import { putPixelData } from './common';
 import type { ImageEncodeOptions } from './common';
+import { putPixelData } from './common';
 
 export async function savePixelsInternal(
 	pixels: NdArray<Uint8Array | Uint8ClampedArray>,
